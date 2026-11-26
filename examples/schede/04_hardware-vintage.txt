@@ -1,0 +1,25 @@
+DESCRIZIONE: In primo piano, una macchina crittografica Enigma M4, con tastiera QWERTZUIOPASDFGHJKLNMXYCVBNML, alloggiata in una cassa di legno aperta. Sopra la macchina, un berretto militare nero con stemma dorato. Sul pannello superiore della cassa, un foglio giallastro con testo stampato in tedesco. In basso, sul fondo della cassa, un piccolo orologio analogico. L’ambiente appare museale, illuminazione uniforme, parete grigia neutra.
+
+TESTI VISIBILI: “MACHINE À CHIFFRER ENIGMA M4”, “GERMAN”, “6014”, “4 Volt”
+
+LUOGO E PERIODO: non determinabile
+
+CATEGORIA: hardware-vintage
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: macchina crittografica, Enigma M4, berretto militare, foglio giallo, orologio analogico, cassa di legno, esposizione museale, tastiera QWERTZUIOPASDFGHJKLNMXYCVBNML
+
+---
+File: 04_hardware-vintage.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2024-08-18 Caen - Memorial
+Data: 18/08/2024 16:35 (da EXIF)
+Fotocamera: FUJIFILM X-T4 · XF16-80mmF4 R OIS WR
+Software: Digital Camera X-T4 Ver2.00
+Scatto: f/4 · 1/56 s · ISO 1250 · 37.6 mm
+Dimensioni: 4160x6240 px (Verticale)
+Peso file: 12.92 MB
+Luminosità media: 102.1/255
+Hash percettivo: f4e12e1cd29736c2
+Nitidezza (indice): 780.5
+Generato con: qwen3-vl:8b-instruct (prompt v4)

@@ -1,0 +1,77 @@
+LABELLULA – come installarla
+============================
+
+Labellula cataloga le tue fotografie con un'intelligenza artificiale che gira sul computer:
+per ogni foto scrive una scheda (cosa si vede, testi leggibili, luogo, data) e poi le ritrovi
+cercando per parole o per significato. Progetto italiano, software libero, nato per sostenere
+ctrlalt.museum (https://ctrlalt.museum).
+
+Per installarla basta questa cartella: GitHub non serve. Serve una connessione a internet,
+perché l'installatore scarica Python (se manca), le librerie e, se il computer è adatto, i modelli.
+L'installatore chiede sempre conferma prima di scaricare qualcosa.
+
+
+COSA SERVE
+----------
+- Windows 10 o 11, macOS oppure Linux.
+- Per DESCRIVERE le foto in locale: una scheda video con circa 12 GB di memoria (NVIDIA RTX 3060 12 GB
+  o superiore, Mac Apple Silicon con 16 GB). Con 8 GB funziona con un modello più leggero.
+- SENZA scheda video adatta Labellula si installa lo stesso: la ricerca funziona, l'archivio
+  dimostrativo con le foto del museo si può esplorare subito, e le foto si possono far descrivere
+  dalla scheda video di un altro computer della stessa rete (vedi la guida, capitolo 3bis).
+  L'installatore controlla l'hardware e non scarica i modelli grandi se il computer non li regge.
+
+
+WINDOWS 10 E 11
+---------------
+1. Estrai lo ZIP (clic destro > Estrai tutto). Apri la cartella finché vedi il file
+   "Installa-Windows.cmd" e la cartella "tools".
+2. Doppio clic su  Installa-Windows.cmd
+   Se compare "Windows ha protetto il PC": Ulteriori informazioni > Esegui comunque.
+3. Rispondi alle domande con S (sì) o N (no) e Invio.
+4. Alla fine trovi l'icona "Labellula" sul desktop e si apre la pagina di ricerca nel browser.
+
+
+MACOS
+-----
+1. Estrai lo ZIP con un doppio clic.
+2. Apri il Terminale (Cmd + Spazio, scrivi Terminale, Invio).
+3. Scrivi  cd  seguito da uno spazio, trascina la cartella di Labellula nella finestra del Terminale
+   e premi Invio.
+4. Scrivi:   sh tools/installa.sh   e premi Invio. Rispondi alle domande con s o n.
+
+
+LINUX (Ubuntu, Debian, Mint e simili)
+-------------------------------------
+1. Estrai lo ZIP (clic destro > Estrai qui) e apri un terminale dentro la cartella di Labellula
+   (clic destro nella cartella > Apri nel terminale).
+2. Se non ci sono già, installa i pacchetti di base (chiede la password):
+      sudo apt install python3 python3-venv python3-pip curl
+3. Lancia l'installatore:
+      sh tools/installa.sh
+   Rispondi alle domande con s o n. Senza scheda video adatta propone solo la ricerca per significato
+   (circa 3 GB): va bene anche su un portatile.
+4. Alla fine trovi Labellula nel menu delle applicazioni; si può aprire anche con
+      sh tools/avvia_labellula.sh
+
+
+DOPO L'INSTALLAZIONE
+--------------------
+- Al primo avvio puoi guardare l'"archivio dimostrativo": foto di ctrlalt.museum già descritte.
+- Per le tue foto: "+ Descrivi foto" > scegli la cartella > "Imposta come archivio".
+- Il pulsante "?" in alto a destra spiega tutto il resto.
+
+
+SE QUALCOSA NON VA
+------------------
+- Guida completa, passo passo: docs/GUIDA.md (si apre anche con il Blocco note o con il browser).
+- Diagnosi automatica, dalla cartella di Labellula:
+      Windows:        python -m labellula diagnosi
+      macOS e Linux:  .venv/bin/python -m labellula diagnosi
+- Annota il messaggio di errore così com'è e mandalo a chi ti ha passato Labellula.
+
+
+In English: double-click "Installa-Windows.cmd" on Windows; on macOS and Linux run
+"sh tools/installa.sh" from this folder. The full guide is in docs/GUIDA.md.
+
+Labellula – di Dino Baldi – licenza AGPL-3.0 – https://github.com/dinobaldi/labellula

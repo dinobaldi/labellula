@@ -1,0 +1,30 @@
+DESCRIZIONE: In un ambiente museale con pavimento lucido grigio e pareti bianche, si vede una vitrina rettangolare con bordi metallici e vetro trasparente. All'interno della vitrina, su uno sfondo blu scuro, sono disposti vari oggetti storici: un giubbotto da volo marrone con pelliccia sul colletto, una piccola maestra di volo in scala ridotta con fusoliera rossa e bianca, un orologio tascabile nero, guanti bianchi, un cordino blu, un libro illustrato con immagini di aeroplani, e una macchina per cifrare messaggi militari nera incastonata in una scatola di legno. Accanto alla macchina c'è una scheda informativa con testo in italiano. Sullo sfondo, a destra, è visibile un pannello riflettente inclinato che mostra l’immagine del soffitto a travi metalliche. Al centro dell’ambiente, in secondo piano, si nota un grande oggetto cilindrico nero su un piedistallo.
+
+TESTI VISIBILI: TENUTA DI VOLO P.C.M., Macchina per invio messaggi critti - Tego, Museo Storico A.M., MUSEO STORICO AERONAUTICO
+
+LUOGO E PERIODO: Bracciano, Latium, IT (lat 42.08518, lon 12.21719) il giorno 18 agosto 2021 alle ore 15:41
+
+CATEGORIA: viaggi-e-vacanze
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: museo aeronautica, giubbotto da volo, maestra di volo, macchina cifrante, orologio tascabile, guanti bianchi, libro illustrato, pannello riflettente
+
+---
+File: 18_viaggi-e-vacanze.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2021-08-18 Vigna di Valle Museo Aeronautica
+Data: 18/08/2021 15:41 (da EXIF)
+Luogo GPS: Bracciano, Latium, IT
+Fotocamera: Xiaomi M2007J3SY
+Scatto: f/1.89 · 1/196 s · ISO 50 · 5.43 mm
+Dimensioni: 4480x2016 px (Panoramica)
+Peso file: 3.36 MB
+Luminosità media: 123.1/255
+Hash percettivo: acedc946c93b4172
+Nitidezza (indice): 944.6
+Generato con: qwen3-vl:8b-instruct (prompt v4)
+
+
+---
+RILEVAMENTO VOLTI: 0 volti identificati
+MOTORE: YUNET (Tempo: 0.52s)

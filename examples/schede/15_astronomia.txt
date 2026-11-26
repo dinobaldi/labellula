@@ -1,0 +1,30 @@
+DESCRIZIONE: L’immagine mostra uno sfondo notturno stellato con due costellazioni evidenziate artificialmente. A sinistra, una costellazione rossa disegnata con linee rette e punti luminosi forma una figura simile a un quadrilatero con un’estensione curva. A destra, una costellazione viola più complessa, con contorni ondulati e dettagli che ricordano una figura umana stilizzata o un animale. Le stelle sullo sfondo sono sparse e appaiono come piccoli punti luminosi bianchi e giallastri su un cielo nero profondo.
+
+TESTI VISIBILI: nessuno
+
+LUOGO E PERIODO: Saltara, The Marches, IT (lat 43.75590, lon 12.89058), il 27 agosto 2021 alle ore 19:39
+
+CATEGORIA: astronomia
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: costellazioni, stelle, cielo notturno, astrofotografia, tracciature colorate, figura umana, arte astrale, illustrazione celeste
+
+---
+File: 15_astronomia.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2021-08-27 3 Museo Bali
+Data: 27/08/2021 19:39 (da EXIF)
+Luogo GPS: Saltara, The Marches, IT
+Fotocamera: Xiaomi M2007J3SY
+Scatto: f/1.89 · 1/13 s · ISO 5698 · 5.43 mm
+Dimensioni: 4480x2016 px (Panoramica)
+Peso file: 2.75 MB
+Luminosità media: 12.1/255
+Hash percettivo: 92923e6d6969c58e
+Nitidezza (indice): 192.5
+Generato con: qwen3-vl:8b-instruct (prompt v4)
+
+
+---
+RILEVAMENTO VOLTI: 0 volti identificati
+MOTORE: YUNET (Tempo: 0.56s)

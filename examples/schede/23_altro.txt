@@ -1,0 +1,25 @@
+DESCRIZIONE: Due marionette sospese da fili metallici, illuminate da una luce diretta. La marionetta a sinistra ha capelli biondi ricci, viso con occhi bianchi e becco rosa, indossa un maglione lavorato a maglia e pantaloni con motivi dorati. La marionetta a destra ha capelli biondo-rossicci raccolti, viso con occhi neri e becco rosa, vestita con un abito trasparente decorato a punto croce e bordature frange. Sono appese a un sistema meccanico composto da assi di legno e ruote dentate, con fili che scendono verso il basso. L’ambiente è buio, con travi di legno visibili sul soffitto e pareti scure, creando un contrasto tra le figure illuminate e lo sfondo.
+
+TESTI VISIBILI: nessuno
+
+LUOGO E PERIODO: Lubiana, 28 agosto 2023, ore 10:47
+
+CATEGORIA: altro
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: marionette, sospese, fili, illuminazione, costumi, abiti, dettagli, esibizione, teatro, artigianale, ambiente scuro
+
+---
+File: 23_altro.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2023-08-28 Lubiana
+Data: 28/08/2023 10:47 (da EXIF)
+Fotocamera: FUJIFILM X-T4 · XF16-80mmF4 R OIS WR
+Software: Digital Camera X-T4 Ver2.00
+Scatto: f/4 · 1/30 s · ISO 6400 · 27.5 mm
+Dimensioni: 4160x6240 px (Verticale)
+Peso file: 9.10 MB
+Luminosità media: 27.9/255
+Hash percettivo: 9e65939ee59b8412
+Nitidezza (indice): 608.1
+Generato con: qwen3-vl:8b-instruct (prompt v4)

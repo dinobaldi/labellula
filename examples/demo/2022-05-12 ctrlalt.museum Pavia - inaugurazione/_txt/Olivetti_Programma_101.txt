@@ -1,0 +1,31 @@
+TITOLO: Macchina Olivetti Programma 101 in esposizione al museo ctrlalt.museum
+
+DESCRIZIONE: L’immagine mostra una macchina Olivetti Programma 101, un calcolatore meccanico con tastiera a colori e un sistema di programmazione a rotella. È posizionata su uno sfondo neutro beige, illuminata da luce diffusa che evidenzia le sue forme angolose e i dettagli metallici. La macchina è completa, senza segni di usura visibile, e sembra essere in esposizione. Il colore dominante è il bianco-grigio del corpo, con parti blu e nere sui tasti e sulle manopole. L'ambiente è interno, probabilmente un museo o sala espositiva, con pavimento liscio e pareti uniformi. Non c’è alcuna persona presente. L’azione non è dinamica: la macchina è statica, fotografata per documentarne lo stato conservato.
+
+TESTI VISIBILI: olivetti programma 101, nessuno
+
+LUOGO E PERIODO: Pavia, Provincia di Pavia, Lombardia, Italia (dalla cartella); 12/05/2022 (dalla cartella)
+
+OCCASIONE: inaugurazione del museo ctrlalt.museum (dalla cartella)
+
+CATEGORIA: hardware-vintage
+
+PERSONE: nessuna
+
+ASPETTI FOTOGRAFICI: foto a figura intera, ripresa da angolo leggermente alto, messa a fuoco netta sull’oggetto principale, illuminazione studio senza ombre dure, immagine nitida e ben bilanciata
+
+PAROLE CHIAVE: Olivetti Programma 101, calcolatore meccanico, museo ctrlalt.museum, esposizione, Pavia, vintage, beige, bianco, grigio, blu, nero, tastiera colorata, rotella programmazione
+
+DUBBI: nessuno
+
+---
+File: Olivetti_Programma_101.jpg
+Cartella: 2022-05-12 ctrlalt.museum Pavia - inaugurazione
+Data: sconosciuta (prova a dedurla dalla cartella)
+Dimensioni: 1024x690 px (Orizzontale)
+Peso file: 0.07 MB
+Luminosità media: 183.2/255
+Hash percettivo: ef94d16c9661c8b2
+Nitidezza (indice): 658.4
+Indizi dalle cartelle: data 12/05/2022 (presunta); luogo Pavia, Provincia di Pavia, Lombardia, Italia (presunto)
+Generato con: qwen3-vl:8b-instruct (prompt v5.2)

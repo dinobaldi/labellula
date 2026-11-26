@@ -1,0 +1,30 @@
+DESCRIZIONE: In una stanza ampia con pavimento lucido di colore terracotta, si vedono tre globi terrestri su piedistalli decorativi, uno al centro e due ai lati. Al centro c’è un grande contenitore a forma di piramide con vetri laterali e base rotonda in legno scuro, che contiene libri o documenti. Sul lato destro, un telescopio su treppiede di legno scuro. Alle spalle, lungo la parete, ci sono scaffali in legno scuro pieni di libri antichi con copertine colorate. Sulla parete sopra gli scaffali c’è un affresco raffigurante figure umane. A sinistra, una porta bianca con intagli dorati e un mobiletto in legno scuro. L'ambiente appare museale, ben conservato, illuminato da luce naturale diffusa.
+
+TESTI VISIBILI: nessuno
+
+LUOGO E PERIODO: Reggia di Caserta, 20 agosto 2021
+
+CATEGORIA: documenti-e-libri
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: globi, telescopio, scaffali, libri antichi, affresco, pavimento lucido, reggia, ambiente museale
+
+---
+File: 21_documenti-e-libri.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2021-08-20 Caserta Reggia
+Data: 20/08/2021 18:44 (da EXIF)
+Fotocamera: FUJIFILM X-M1 · XC16-50mmF3.5-5.6 OIS
+Software: Digital Camera X-M1 Ver1.50
+Scatto: f/3.8 · 1/5 s · ISO 800 · 20.1 mm
+Dimensioni: 4896x3264 px (Orizzontale)
+Peso file: 5.38 MB
+Luminosità media: 89.6/255
+Hash percettivo: e0e08db912d6969f
+Nitidezza (indice): 569.4
+Generato con: qwen3-vl:8b-instruct (prompt v4)
+
+
+---
+RILEVAMENTO VOLTI: 0 volti identificati
+MOTORE: YUNET (Tempo: 1.01s)

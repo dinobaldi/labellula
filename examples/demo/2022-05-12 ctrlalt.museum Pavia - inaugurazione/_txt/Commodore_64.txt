@@ -1,0 +1,32 @@
+TITOLO: Commodore 64 in esposizione al museo dell’informatica a Pavia
+
+DESCRIZIONE: In primo piano un computer Commodore 64 con tastiera nera e corpo beige, posizionato su una superficie riflettente. Accanto, un volantino per l’inaugurazione del “ctrlalt.museum” con data 13-15 Maggio 2022 e locazione Via Riviera 39, Pavia. Sullo sfondo, un muro di mattoni rossi curvo, decorato da una statuetta di cavallo in metallo e da un libro di Pac-Man. Sulla destra, è visibile la copertina di un libro intitolato "Encyclopedia of MS-DOS". L'ambiente è interno, illuminato da luce naturale proveniente da una finestra alta, che crea riflessi sul tavolo lucido. I colori dominanti sono il rosso dei mattoni, il grigio-beige del computer e il giallo delle grafiche sul volantino. Il momento della giornata è pomeriggio primaverile (confermato dalla data EXIF 12/05/2022 alle 14:34). Non ci sono persone nell’immagine.
+
+TESTI VISIBILI: Commodore 64, PAC-MAN, Passato. Presente. Futuro., Grand Opening, 13 - 15 Maggio 2022, Via Riviera 39, Pavia, Free Entry | 9:00 - 19:00, beSharp. we make IT run, coherency, http://ctrlalt.museum
+
+LUOGO E PERIODO: Pavia, Provincia di Pavia, Lombardia, Italia (dalla cartella); 12 maggio 2022, pomeriggio (da EXIF)
+
+OCCASIONE: inaugurazione del museo dell'informatica ctrlalt.museum (dalle cartelle e dal volantino visibile)
+
+CATEGORIA: hardware-vintage
+
+PERSONE: nessuna
+
+ASPETTI FOTOGRAFICI: inquadratura a fisheye che include il computer al centro, messa a fuoco sulle tastiere e sui testi visibili; luce naturale diffusa con riflessi sul piano lucido; non c’è movimento evidente né sovraesposizione.
+
+PAROLE CHIAVE: Commodore 64, Pac-Man, ctrlalt.museum, Pavia, inaugurazione, muro di mattoni, libro MS-DOS, volantino, tavolo lucido, giallo, grigio-beige, rosso
+
+DUBBI: nessuno
+
+---
+File: Commodore_64.jpg
+Cartella: 2022-05-12 ctrlalt.museum Pavia - inaugurazione
+Data: 12/05/2022 14:34 (da EXIF)
+Fotocamera: FUJIFILM X-T4
+Dimensioni: 1333x2000 px (Verticale)
+Peso file: 0.38 MB
+Luminosità media: 121.2/255
+Hash percettivo: 9ae983b921f1d991
+Nitidezza (indice): 550.0
+Indizi dalle cartelle: data 12/05/2022 (confermata dall'EXIF); luogo Pavia, Provincia di Pavia, Lombardia, Italia (presunto)
+Generato con: qwen3-vl:8b-instruct (prompt v5.2)

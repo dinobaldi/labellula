@@ -1,0 +1,29 @@
+DESCRIZIONE: L’immagine mostra una composizione ravvicinata di piante grasse, probabilmente specie del genere Sempervivum o Aeonium, disposte in modo compattissimo. Ogni pianta ha una forma rosetta con foglie carnose di colore verde chiaro, bordate da una tonalità rosso-marrone più scura. Le foglie sono lisce ma con margini leggermente spinosi e presentano piccole pellicole bianche lungo il bordo. La luce è diffusa e uniforme, senza ombre marcate, suggerendo un ambiente coperto o all’ombra. Non ci sono persone né altri oggetti visibili.
+
+TESTI VISIBILI: nessuno
+
+LUOGO E PERIODO: non determinabile
+
+CATEGORIA: insetti-e-natura
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: succulente, rosette, foglie verdi, bordi rossi, pianta grasse, dettaglio macro, vegetazione, cactus, fioritura, natura, giardino, esterno, fotografia botanica
+
+---
+File: 11_insetti-e-natura.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2021-06-26 Ascona macro e lavori nei campi
+Data: 26/06/2021 18:51 (da EXIF)
+Fotocamera: FUJIFILM X-M1
+Software: Digital Camera X-M1 Ver1.50
+Dimensioni: 4896x3264 px (Orizzontale)
+Peso file: 3.91 MB
+Luminosità media: 131.9/255
+Hash percettivo: 80bb77494b82376e
+Nitidezza (indice): 191.3
+Generato con: qwen3-vl:8b-instruct (prompt v4)
+
+
+---
+RILEVAMENTO VOLTI: 0 volti identificati
+MOTORE: YUNET (Tempo: 0.98s)

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Labellula</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="marchio.svg">
+</head>
+<body>
+<header class="barra">
+  <div class="marchio" title="Labellula: catalogazione locale con l'AI"><img src="marchio.svg" alt="" width="34" height="34">Labellula</div>
+  <form id="ricerca" class="ricerca" role="search" autocomplete="off">
+    <input id="q" type="search" placeholder="Cerca: commodore, gara di karate a Torino, volpe, cattedrale…" aria-label="Testo da cercare">
+    <select id="modo" aria-label="Tipo di ricerca" hidden title="Come confrontare il testo cercato con le schede">
+      <option value="misto">Parole + significato</option>
+      <option value="significato">Solo significato</option>
+      <option value="parole">Solo parole</option>
+    </select>
+    <button type="submit">Cerca</button>
+  </form>
+  <nav class="azioni" aria-label="Azioni">
+    <button id="b-descrivi" type="button" class="principale" title="Scegli una cartella del PC e fai descrivere le foto">＋ Descrivi foto</button>
+    <button id="b-crediti" type="button" title="Non hai una GPU? Le foto vengono descritte dalla GPU di Labellula, a crediti">Elaborazione remota</button>
+    <select id="lingua" class="lingua" title="Lingua dell'interfaccia e delle nuove schede" aria-label="Lingua"></select>
+    <button id="b-aiuto" type="button" class="tondo" title="Aiuto: come funziona Labellula (?)" aria-label="Aiuto">?</button>
+  </nav>
+  <div class="filtri" aria-label="Filtri">
+    <select id="categoria" aria-label="Categoria"><option value="">Tutte le categorie</option></select>
+    <select id="anno_da" aria-label="Dall'anno"><option value="">Dal</option></select>
+    <select id="anno_a" aria-label="All'anno"><option value="">Al</option></select>
+    <select id="persona" aria-label="Persona" hidden><option value="">Tutte le persone</option></select>
+    <label class="link"><input id="verificare" type="checkbox"> Solo da verificare</label>
+  </div>
+</header>
+
+<div class="fascia">
+  <a class="museo" href="https://ctrlalt.museum/" target="_blank" rel="noopener" title="ctrlalt.museum: il museo dei computer dell'associazione comPVter">
+    <span class="logo-ctrlalt" role="img" aria-label="Ctrl+Alt Museum"></span></a>
+  <a class="museo" href="https://ctrlalt.museum/compvter/" target="_blank" rel="noopener" title="Associazione culturale comPVter">
+    <img src="compvter.png" width="30" height="30" alt="comPVter"></a>
+  <span id="fascia-testo" class="fascia-testo">Labellula è un progetto open source italiano, nato per sostenere ctrlalt.museum</span>
+  <div id="lavoro" class="lavoro" hidden aria-live="polite">
+    <div class="lavoro-testo"><b id="l-fase"></b> <span id="l-dettaglio"></span></div>
+    <progress id="l-barra" max="1" value="0"></progress>
+    <button id="l-ferma" type="button">Ferma</button>
+    <button id="l-chiudi" type="button" hidden title="Nascondi">✕</button>
+  </div>
+</div>
+
+<div class="sottobarra">
+  <div id="filtri-attivi" class="filtri-attivi"></div>
+  <div id="ultime" class="ultime" aria-label="Ultime ricerche"></div>
+  <div class="strumenti">
+    <button id="b-salva" type="button" class="link" title="Salva questa ricerca tra le preferite">☆ Salva ricerca</button>
+    <a id="b-esporta" class="link" href="#" title="Scarica i risultati in un file CSV (Excel, LibreOffice)">Esporta CSV</a>
+  </div>
+</div>
+
+<main>
+  <p id="stato" class="stato" aria-live="polite">Caricamento…</p>
+  <section id="griglia" class="griglia" aria-label="Risultati"></section>
+  <div class="altri"><button id="altri" hidden>Mostra altri risultati</button></div>
+</main>
+
+<aside id="pannello" class="pannello" hidden aria-label="Scheda della foto">
+  <div class="pannello-testa">
+    <button id="prec" title="Precedente (←)">‹</button>
+    <button id="succ" title="Successiva (→)">›</button>
+    <span id="p-nome" class="p-nome"></span>
+    <button id="chiudi" title="Chiudi (Esc)">✕</button>
+  </div>
+  <a id="p-link" target="_blank" rel="noopener" title="Apri la foto originale"><img id="p-img" alt=""></a>
+  <div class="p-azioni">
+    <button id="p-simili" type="button" title="Foto con una descrizione simile">Foto simili</button>
+    <button id="p-cartella" type="button" title="Tutte le foto di questa cartella">Stessa cartella</button>
+    <button id="p-copia" type="button" title="Copia la scheda negli appunti">Copia scheda</button>
+  </div>
+  <div id="p-corpo" class="p-corpo"></div>
+</aside>
+
+<dialog id="d-descrivi" class="dialogo" aria-labelledby="d-descrivi-t">
+  <form method="dialog" class="dialogo-testa"><h2 id="d-descrivi-t">Descrivi le foto di una cartella</h2><button aria-label="Chiudi">✕</button></form>
+  <p class="tenue" data-t="descrivi-intro">Scegli la cartella: Labellula descrive tutte le foto che contiene, sottocartelle comprese, e scrive le schede in <code>_txt</code> accanto alle foto. Le foto già descritte vengono saltate. I nomi delle cartelle (date, luoghi, eventi) aiutano molto il modello.</p>
+  <div class="percorso">
+    <button id="c-su" type="button" title="Cartella superiore">⬆</button>
+    <input id="c-percorso" type="text" aria-label="Percorso della cartella" spellcheck="false">
+    <button id="c-vai" type="button">Vai</button>
+  </div>
+  <ul id="c-elenco" class="elenco-cartelle"></ul>
+  <p id="c-info" class="tenue"></p>
+  <p id="c-hardware" class="avviso" hidden></p>
+  <fieldset class="motore">
+    <legend>Chi descrive le foto</legend>
+    <label><input type="radio" name="motore" value="locale" checked> Questo PC, con Ollama: gratis, serve una GPU (~4–7 s a foto)</label>
+    <div class="rientro ollama-riga">
+      <label for="c-ollama">Ollama su:</label>
+      <input id="c-ollama" type="text" spellcheck="false" placeholder="questo computer, oppure 192.168.1.20" aria-label="Indirizzo di Ollama">
+      <button id="c-ollama-prova" type="button" title="Controlla che Ollama risponda, senza cambiare niente">Prova</button>
+      <button id="c-ollama-usa" type="button" title="Usa questo Ollama per descrivere le foto (salvato in config.yaml)">Usa</button>
+    </div>
+    <p id="c-ollama-esito" class="rientro piccolo" hidden></p>
+    <label class="rientro">Modello: <select id="c-modello" aria-label="Modello che descrive le foto"></select>
+      <span class="tenue piccolo" id="c-modello-nota"></span></label>
+    <label class="disattivo"><input type="radio" name="motore" value="servizio" disabled> Servizio Labellula a crediti, senza GPU: in arrivo</label>
+  </fieldset>
+  <label><input id="c-aggiorna" type="checkbox"> Aggiorna le schede fatte con un prompt più vecchio (<span id="c-versione">ultimo</span>); si riprende da dove ci si era fermati</label>
+  <label><input id="c-rifai" type="checkbox"> Riscrivi tutte le schede, anche quelle già aggiornate</label>
+  <label><input id="c-lotti" type="checkbox"> A lotti: una sottocartella alla volta, con la ricerca aggiornata dopo ognuna (per archivi grandi)</label>
+  <label><input id="c-prova" type="checkbox"> Prova: solo le prime 20 foto</label>
+  <div class="dialogo-piede">
+    <button id="c-archivio" type="button" title="Cerca in questa cartella invece che nell'archivio attuale">Imposta come archivio</button>
+    <span class="spazio"></span>
+    <button id="c-conta" type="button">Conta le foto</button>
+    <button id="c-avvia" type="button" class="principale">Avvia la descrizione</button>
+  </div>
+  <p class="tenue piccolo">Archivio della ricerca: <span id="c-archivio-attuale"></span></p>
+</dialog>
+
+<dialog id="d-crediti" class="dialogo" aria-labelledby="d-crediti-t">
+  <form method="dialog" class="dialogo-testa"><h2 id="d-crediti-t">Elaborazione remota</h2><button aria-label="Chiudi">✕</button></form>
+  <p data-t="crediti-1">Non hai una scheda video adatta, o hai un archivio molto grande? Con un <b>codice a crediti</b> le foto vengono descritte dalla GPU di Labellula, fuori dal tuo PC: ogni foto descritta scala un credito. Ricerca, schede e foto restano sul tuo PC.</p>
+  <p class="tenue" data-t="crediti-2">Se hai una GPU con almeno 12 GB puoi fare tutto gratis sul tuo PC: vedi <button type="button" class="link apri-aiuto">Aiuto › Tre modi di usare Labellula</button>.</p>
+  <ul>
+    <li data-t="crediti-li1">Al server arriva solo una <b>copia ridotta e senza metadati</b> (niente GPS, niente nomi delle cartelle se non lo scegli tu).</li>
+    <li data-t="crediti-li2">La foto e la scheda <b>non vengono salvate</b> sul server: la scheda arriva subito sul tuo PC.</li>
+    <li data-t="crediti-li3">Il riconoscimento dei volti resta sempre e solo sul tuo PC.</li>
+    <li data-t="crediti-li4">Le prime foto sono gratis per provare.</li>
+  </ul>
+  <p data-t="crediti-4">Gli incassi sostengono l'associazione culturale comPVter e il museo <a href="https://ctrlalt.museum/" target="_blank" rel="noopener">ctrlalt.museum</a>.</p>
+  <div class="dialogo-piede">
+    <label class="codice">Codice <input id="cr-codice" type="text" placeholder="LBL-XXXX-XXXX-XXXX" disabled></label>
+    <span class="spazio"></span>
+    <a id="cr-acquista" class="pulsante principale" target="_blank" rel="noopener">Acquista crediti</a>
+    <a id="cr-dona" class="pulsante" target="_blank" rel="noopener">Sostieni il museo</a>
+  </div>
+  <p id="cr-nota" class="tenue piccolo"></p>
+</dialog>
+
+<dialog id="d-aiuto" class="dialogo largo" aria-labelledby="d-aiuto-t">
+  <form method="dialog" class="dialogo-testa"><h2 id="d-aiuto-t">Come funziona Labellula</h2><button aria-label="Chiudi">✕</button></form>
+  <p data-t="aiuto-intro">Labellula guarda ogni foto con un modello di intelligenza artificiale e scrive una <b>scheda</b> in italiano: titolo, descrizione, scritte leggibili, luogo e data (con la fonte), occasione, persone, parole chiave. Le schede sono file di testo in una cartella <code>_txt</code> accanto alle foto: restano tue e si leggono con qualsiasi programma. Poi puoi cercare in tutto l'archivio per parole o per significato.</p>
+  <p class="avviso" data-t="aiuto-gpu">Per descrivere le foto su questo PC serve una <b>scheda video con circa 12 GB</b> di memoria. Senza, la ricerca funziona lo stesso, ma la descrizione è troppo lenta: usa l'<b>elaborazione remota</b>, che sostiene ctrlalt.museum.</p>
+  <h3>Tre modi di usare Labellula</h3>
+  <ol class="modi">
+    <li data-t="aiuto-modo1"><b>Tutto sul tuo PC, gratis.</b> Scarichi Labellula da GitHub e lo installi: serve una scheda video con circa 12 GB di memoria e il programma gratuito Ollama. Le foto non escono mai dal PC. <a id="a-guida" target="_blank" rel="noopener">Guida all'installazione</a>. Una donazione al museo è benvenuta.</li>
+    <li data-t="aiuto-modo2"><b>Elaborazione remota, a crediti, che sostiene il museo.</b> Senza GPU: compri un codice e le foto vengono descritte dalla GPU di Labellula. Al server arriva solo una copia ridotta senza metadati, che non viene salvata; la scheda torna subito sul tuo PC. <i>In preparazione.</i></li>
+    <li data-t="aiuto-modo3"><b>Chiavi in mano, per musei e archivi.</b> Per collezioni grandi o fondi fotografici: installazione, descrizione, revisione e formati da archivio. Su richiesta.</li>
+  </ol>
+  <h3>Primi passi</h3>
+  <ol>
+    <li data-t="aiuto-passo1">Clic su <b>＋ Descrivi foto</b>, scegli la cartella e premi <b>Conta le foto</b> per sapere quanto tempo serve.</li>
+    <li data-t="aiuto-passo2">Prova con <b>solo le prime 20 foto</b>, guarda le schede, poi lancia tutta la cartella. Puoi fermare e riprendere quando vuoi.</li>
+    <li data-t="aiuto-passo3">Se la cartella non è dentro l'archivio di ricerca, usa <b>Imposta come archivio</b>.</li>
+    <li data-t="aiuto-passo4">Cerca: «gara di karate», «volpe», «Commodore», «automobile rossa». Clicca una foto per la scheda completa.</li>
+  </ol>
+  <h3>Consigli</h3>
+  <ul>
+    <li data-t="aiuto-cons1">Dai nomi chiari alle cartelle, per esempio <code>2024-02-04 gara karate Torino</code>: data, luogo ed evento vengono verificati con i dati della foto e finiscono nella scheda.</li>
+    <li data-t="aiuto-cons2">Nel file <code>config.yaml</code>, alla voce <code>luoghi_noti</code>, puoi spiegare i nomi che solo tu conosci, per esempio «Casa».</li>
+    <li data-t="aiuto-cons3"><b>Solo da verificare</b> mostra le schede in cui il modello ha dei dubbi.</li>
+    <li data-t="aiuto-cons4"><b>Esporta CSV</b> salva i risultati per Excel o LibreOffice.</li>
+  </ul>
+  <section id="sez-rete" hidden>
+    <h3>Telefono e tablet</h3>
+    <p data-t="aiuto-rete">Puoi aprire la ricerca da telefono, tablet o altri computer collegati alla stessa rete Wi-Fi, con una password. Da questo computer la password non serve.</p>
+    <p id="r-stato" class="tenue"></p>
+    <div class="ollama-riga">
+      <input id="r-password" type="password" autocomplete="new-password" placeholder="password (almeno 8 caratteri)" aria-label="Password per l'accesso dalla rete">
+      <input id="r-conferma" type="password" autocomplete="new-password" placeholder="ripeti la password" aria-label="Ripeti la password">
+    </div>
+    <div class="dialogo-piede">
+      <button id="r-attiva" type="button" class="principale">Attiva l'accesso dalla rete</button>
+      <button id="r-disattiva" type="button">Disattiva</button>
+    </div>
+    <p id="r-esito" class="piccolo" hidden></p>
+  </section>
+  <h3>Scorciatoie</h3>
+  <p data-t="aiuto-scorciatoie"><kbd>/</kbd> cerca · <kbd>?</kbd> aiuto · <kbd>←</kbd> <kbd>→</kbd> foto precedente e successiva · <kbd>Esc</kbd> chiude</p>
+  <h3>Privacy</h3>
+  <p data-t="aiuto-privacy">In locale nessuna foto lascia il PC e la pagina risponde solo a questo computer. Il riconoscimento dei volti, se attivo, resta sempre locale. Le ultime ricerche sono salvate solo in questo browser.</p>
+  <p class="tenue piccolo">Labellula, di Dino Baldi · <a href="https://github.com/dinobaldi/labellula" target="_blank" rel="noopener">GitHub</a> · software libero <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">AGPL-3.0</a> · per <a href="https://ctrlalt.museum/" target="_blank" rel="noopener">ctrlalt.museum</a> e l'associazione <a href="https://ctrlalt.museum/compvter/" target="_blank" rel="noopener">comPVter</a></p>
+</dialog>
+
+<footer class="piede">Tutto gira su questo computer: nessuna foto lascia la macchina. <span id="info"></span>
+  <span class="tricolore">Made in Italy</span> · <a href="https://labellula.it" target="_blank" rel="noopener">labellula.it</a> ·
+  <a id="f-dona" target="_blank" rel="noopener">Sostieni ctrlalt.museum</a> <a id="f-esci" href="/esci" hidden>Esci</a></footer>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

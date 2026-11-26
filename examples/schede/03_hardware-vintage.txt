@@ -1,0 +1,24 @@
+DESCRIZIONE: L’immagine mostra un computer Commodore CBM 2001 Series, un modello professionale degli anni ’80. Il dispositivo ha un design integrato con schermo monocromatico incastonato nella parte superiore, tastiera beige con pulsanti colorati (rosso, blu, verde), e un pannello nero sulla sinistra con una piccola finestra e alcuni interruttori. È posizionato su un tavolo di colore marrone chiaro. Sul lato destro dell’immagine, accanto al computer, c’è un cartello verticale bianco con testo in italiano, che parla del periodo 1977-1987 e della trasformazione del computer in un prodotto personale. Lo sfondo è una parete bianca. L'oggetto appare conservato bene ma con segni di usura lievi, come macchie sul telaio.
+
+TESTI VISIBILI: commodore, CBM™, professional computer, 2001 Series, > 1977 - 1987, Quando il Computer divenne Personal, Passato. Presente. Futuro., Opening, PET
+
+LUOGO E PERIODO: non determinabile
+
+CATEGORIA: hardware-vintage
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: Commodore, CBM 2001, schermo monocromatico, tastiera beige, pulsanti colorati, cartello storico, computer vintage, esposizione, anni '80
+
+---
+File: 03_hardware-vintage.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2022-05-12 Test 7artisans 75
+Data: 12/05/2022 14:33 (da EXIF)
+Fotocamera: FUJIFILM X-T4
+Software: Digital Camera X-T4 Ver1.22
+Dimensioni: 6240x4160 px (Orizzontale)
+Peso file: 10.83 MB
+Luminosità media: 123.1/255
+Hash percettivo: f4a7039e6a855e98
+Nitidezza (indice): 345.3
+Generato con: qwen3-vl:8b-instruct (prompt v4)

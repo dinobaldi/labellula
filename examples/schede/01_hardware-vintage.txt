@@ -1,0 +1,25 @@
+DESCRIZIONE: In primo piano, su una superficie chiara, si vedono diversi oggetti antichi legati alla visione: occhiali con montature metalliche, custodie nere e uno strumento ottico con lenti circolari. Al centro, aperto, c’è un baule di legno scuro con chiusure in ottone, all’interno del quale è sistemato un apparecchio ottico complesso con due lenti grandi e un meccanismo regolabile. Sul fondo del baule ci sono altri oggetti avvolti in tessuto scuro. Sulla superficie davanti al baule, tra gli oggetti, si intravede parzialmente una carta con lettere grandi, probabilmente per la verifica della vista. L’ambiente sembra essere un’esposizione museale o un’area di conservazione, con illuminazione uniforme e sfondo neutro.
+
+TESTI VISIBILI: nessuno
+
+LUOGO E PERIODO: non determinabile
+
+CATEGORIA: hardware-vintage
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: occhiali vintage, baule legno, strumento ottico, lenti, custodie, esposizione, conservazione, ottica, storia della visione
+
+---
+File: 01_hardware-vintage.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2023-08-27 Bratislava
+Data: 27/08/2023 11:06 (da EXIF)
+Fotocamera: FUJIFILM X-T4 · XF16-80mmF4 R OIS WR
+Software: Digital Camera X-T4 Ver2.00
+Scatto: f/4 · 1/58 s · ISO 6400 · 80 mm
+Dimensioni: 6240x4160 px (Orizzontale)
+Peso file: 13.33 MB
+Luminosità media: 110.3/255
+Hash percettivo: ef6ad4d0d4a1986a
+Nitidezza (indice): 315.7
+Generato con: qwen3-vl:8b-instruct (prompt v4)

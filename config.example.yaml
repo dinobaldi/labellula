@@ -1,0 +1,71 @@
+# Configurazione di Labellula.
+# Copia questo file come "config.yaml" (che git ignora) e adatta i percorsi.
+# I percorsi relativi sono risolti rispetto alla cartella di questo file.
+
+archivio:
+  # Cartella radice delle foto (tutte le sottocartelle vengono elaborate)
+  # Vuota = la cartella Immagini del tuo utente; si cambia anche dalla pagina ("Imposta come archivio")
+  radice: ""
+  # Estensioni delle immagini da elaborare
+  estensioni: [".jpg", ".jpeg", ".jfif", ".png", ".heic", ".heif"]
+  # Cartelle da saltare (nomi, senza distinzione maiuscole/minuscole)
+  salta_cartelle: ["$recycle.bin", "system volume information", "old versions"]
+
+schede:
+  # Sottocartella, accanto alle foto, dove vanno le schede descrittive .txt
+  cartella_txt: "_txt"
+  # Sottocartella con i rilevamenti dei volti .json
+  cartella_volti: "_faces"
+
+modello:
+  # Motore di descrizione: per ora "ollama" (locale)
+  motore: "ollama"
+  ollama_url: "http://localhost:11434"
+  nome: "qwen3-vl:8b-instruct"
+  lato_massimo_px: 1344
+  # Modello locale per la ricerca per significato (ollama pull bge-m3)
+  embedding: "bge-m3"
+
+descrizione:
+  # Lingua delle schede: it, en, fr, de, es (si cambia anche dal menu della lingua nella pagina)
+  lingua: "it"
+  # Versione del prompt: "v5" (titolo, fonti, occasione, aspetti fotografici, dubbi) o "v4" (precedente)
+  prompt: "v5"
+  # Contesto per il modello: chi scatta e cosa fotografa di solito (aiuta a riconoscere i soggetti).
+  # Lascialo vuoto se non vuoi dare indicazioni. Attenzione: il modello tende a "vedere" ciò che gli dici.
+  contesto: ""
+  # Categorie fisse tra cui il modello sceglie (una per foto)
+  categorie: [lavoro, hardware-vintage, famiglia-e-amici, viaggi-e-vacanze, insetti-e-natura,
+              astronomia, documenti-e-libri, altro]
+  # Nomi che compaiono nelle tue cartelle e che solo tu sai spiegare (il modello li usa come informazione affidabile).
+  # Esempi:  "Casa": "abitazione del fotografo a <comune>"   "Baldi srl": "azienda, sede di <comune>"
+  luoghi_noti: {}
+  # Con un motore remoto: manda anche cartella, nome del file e luogo GPS? (default no)
+  percorso_al_remoto: false
+
+dati:
+  # Indice di ricerca e cache delle miniature: si possono sempre ricreare.
+  # Meglio su un SSD. Percorso relativo = accanto a questo file.
+  cartella: "dati"
+
+server:
+  # 127.0.0.1 = raggiungibile solo da questo PC (consigliato).
+  # 0.0.0.0 = raggiungibile da telefono e tablet della rete di casa, SOLO con password.
+  # Si attiva dalla pagina (? > Telefono e tablet) o con:  python -m labellula rete attiva
+  # La password è salvata in password_hash solo come impronta (PBKDF2), mai in chiaro.
+  indirizzo: "127.0.0.1"
+  porta: 8765
+
+servizio:
+  # Pulsante "Crediti" dell'interfaccia: pagina dove acquistare i codici per il servizio di labellizzazione
+  url_acquisto: ""
+  # Pulsante "Sostieni il museo"
+  url_donazioni: "https://ctrlalt.museum/ctrlalter/"
+
+volti:
+  # Modulo opzionale: spento di default.
+  # Se attivo, la ricerca mostra anche le persone del registro labellula_identita.json
+  attivo: false
+  # Database vettoriale e cache dei ritagli (meglio su SSD)
+  cartella_db: "E:/_biometrics_db"
+  dimensione_minima_px: 80

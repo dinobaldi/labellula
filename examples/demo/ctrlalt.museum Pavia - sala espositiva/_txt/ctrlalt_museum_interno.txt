@@ -1,0 +1,31 @@
+TITOLO: Interno del museo ctrlalt.museum con computer vintage esposti
+
+DESCRIZIONE: L’immagine mostra l’interno di un museo dedicato ai computer storici, situato a Pavia. Il locale è ampio, con pavimento in legno chiaro e pareti bianche, illuminato da luci artificiali installate sul soffitto e da finestre alte che lasciano entrare luce naturale. Al piano terra sono disposti vari modelli di computer vintage, tra cui monitor beige, tastiere e unità centrali, alcuni su tavoli e altri su scaffali. Sullo sfondo si vede una scala metallica che porta al primo piano, dove sono visibili altre esposizioni e struttura in acciaio nero. Sulla destra, un banco ospita un computer con monitor e tastiera beige. La stanza ha un'atmosfera pulita e ordinata, tipica di uno spazio museale. Non ci sono persone presenti. I colori dominanti sono il grigio scuro delle strutture, il bianco delle pareti e il beige dei dispositivi. La luce sembra essere quella diurna, ma non è possibile determinare l’esatta ora o la stagione.
+
+TESTI VISIBILI: ctrlalt.museum
+
+LUOGO E PERIODO: Pavia, Provincia di Pavia, Lombardia, Italia (dalla cartella); data sconosciuta (dalla cartella)
+
+OCCASIONE: visita a un museo (dalla cartella)
+
+CATEGORIA: hardware-vintage
+
+PERSONE: nessuna
+
+ASPETTI FOTOGRAFICI: foto panoramica interna, ripresa da un punto di vista centrale e leggermente basso, messa a fuoco su oggetti del primo piano, immagine nitida senza difetti evidenti
+
+PAROLE CHIAVE: computer vintage, monitor beige, tastiere retro, museo, Pavia, esposizione, legno chiaro, struttura metallica, illuminazione artificiale, ambiente museale
+
+DUBBI: nessuno
+
+---
+File: ctrlalt_museum_interno.jpg
+Cartella: ctrlalt.museum Pavia - sala espositiva
+Data: sconosciuta (prova a dedurla dalla cartella)
+Dimensioni: 1200x798 px (Orizzontale)
+Peso file: 0.21 MB
+Luminosità media: 108.2/255
+Hash percettivo: 939095ebe7f010ad
+Nitidezza (indice): 1726.9
+Indizi dalle cartelle: luogo Pavia, Provincia di Pavia, Lombardia, Italia (presunto)
+Generato con: qwen3-vl:8b-instruct (prompt v5.2)

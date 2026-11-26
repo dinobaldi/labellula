@@ -1,0 +1,32 @@
+TITOLO: Apple IIc in esposizione al museo dell’informatica a Pavia
+
+DESCRIZIONE: L’immagine mostra un computer Apple IIc vintage, con tastiera integrata e monitor a tubo catodico, posizionato su una scrivania in legno lucido. Il corpo del dispositivo è beige, con il logo Apple colorato sul pannello inferiore del monitor. Sul pannello frontale della tastiera si legge "80/40" e sono visibili alcuni pulsanti funzione. Lo sfondo include altri apparecchi informatici retro, tra cui un altro computer con monitor più grande e un oggetto grigio a sinistra. La stanza ha pareti bianche e pavimento in legno chiaro; la luce è diffusa e uniforme, tipica di un ambiente interno durante il pomeriggio primaverile. Sono presenti almeno due dispositivi informatici visibili, ma non ci sono persone nell'immagine.
+
+TESTI VISIBILI: Apple, 80/40, control, esc, shift, fn, [altro testo parzialmente illeggibile]
+
+LUOGO E PERIODO: Pavia, Provincia di Pavia, Lombardia, Italia (dalla cartella); 12 maggio 2022, ore 14:33 (da EXIF); pomeriggio primaverile (dedotto dall’immagine)
+
+OCCASIONE: inaugurazione del museo dell’informatica ctrlalt.museum (dalla cartella)
+
+CATEGORIA: hardware-vintage
+
+PERSONE: nessuna
+
+ASPETTI FOTOGRAFICI: scatto frontale con angolo basso e obiettivo grandangolare che crea una curvatura visiva sulle pareti; messa a fuoco su tutta la tastiera; immagine nitida senza difetti evidenti.
+
+PAROLE CHIAVE: Apple IIc, computer vintage, monitor CRT, tastiera integrata, scrivania in legno, museo informatica, Pavia, inaugurazione, beige, interni
+
+DUBBI: nessuno
+
+---
+File: Apple_IIc.jpg
+Cartella: 2022-05-12 ctrlalt.museum Pavia - inaugurazione
+Data: 12/05/2022 14:33 (da EXIF)
+Fotocamera: FUJIFILM X-T4
+Dimensioni: 1333x2000 px (Verticale)
+Peso file: 0.29 MB
+Luminosità media: 108.7/255
+Hash percettivo: 97f0284f48af356a
+Nitidezza (indice): 623.3
+Indizi dalle cartelle: data 12/05/2022 (confermata dall'EXIF); luogo Pavia, Provincia di Pavia, Lombardia, Italia (presunto)
+Generato con: qwen3-vl:8b-instruct (prompt v5.2)

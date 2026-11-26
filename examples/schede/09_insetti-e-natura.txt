@@ -1,0 +1,25 @@
+DESCRIZIONE: Un'anatra selvatica con piumaggio grigio e bianco nuota in acqua stagnante. La testa è rivolta verso destra, il becco nero è immerso parzialmente nell’acqua. L’acqua intorno all’anatra mostra onde concentriche causate dal suo movimento. Sullo sfondo si vede la riva con terra umida e tracce di vegetazione. I colori predominanti sono tonalità di marrone e grigio, con riflessi chiari dell’acqua.
+
+TESTI VISIBILI: nessuno
+
+LUOGO E PERIODO: Albissola, 22 aprile 2023 alle 18:59
+
+CATEGORIA: insetti-e-natura
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: anatra, acqua, ondulazioni, natura, uccello, nuoto, riva, terra, riflessi, piumaggio, grigio, bianco, becco, movimento
+
+---
+File: 09_insetti-e-natura.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2023-04-24 Albissola - primo bagno
+Data: 22/04/2023 18:59 (da EXIF)
+Fotocamera: FUJIFILM X-T4 · XC50-230mmF4.5-6.7 OIS
+Software: Digital Camera X-T4 Ver1.22
+Scatto: f/10 · 1/140 s · ISO 1600 · 230 mm
+Dimensioni: 6240x4160 px (Orizzontale)
+Peso file: 13.66 MB
+Luminosità media: 113.8/255
+Hash percettivo: 8137b19896d94ef2
+Nitidezza (indice): 1714.1
+Generato con: qwen3-vl:8b-instruct (prompt v4)

@@ -1,0 +1,32 @@
+TITOLO: Commodore PET 2001 in esposizione al museo ctrlalt.museum a Pavia
+
+DESCRIZIONE: L’immagine mostra un computer Commodore PET 2001 Series, un modello professionale del 1977, posizionato su un tavolo con una tastiera integrata e uno schermo monocromatico incastonato nella parte superiore. Il corpo è bianco con dettagli neri, e le chiavi della tastiera sono beige con alcune funzioni colorate (rosso, blu). Sul lato destro si nota un piccolo pannello di controllo per il caricamento dei programmi. Accanto all'unità principale c'è un cartello informativo che riporta "Passato. Presente. Futuro." e la data "> 1977 - 1987", riferito alla diffusione del computer personale. La scena è interna, illuminata da luce artificiale uniforme, probabilmente durante il pomeriggio primaverile. Non ci sono persone visibili nell'inquadratura. L'ambiente appare pulito e curato, tipico di un'esposizione museale.
+
+TESTI VISIBILI: commodore, CBM™, 2001 Series, professional computer, > 1977 - 1987, Quando il Computer divenne Personal, Passato. Presente. Futuro., PET
+
+LUOGO E PERIODO: Pavia, Provincia di Pavia, Lombardia, Italia (dalla cartella); 12/05/2022, pomeriggio (da EXIF)
+
+OCCASIONE: inaugurazione del museo ctrlalt.museum (dalla cartella)
+
+CATEGORIA: hardware-vintage
+
+PERSONE: nessuna
+
+ASPETTI FOTOGRAFICI: foto in primo piano con angolo leggermente basso, messa a fuoco sullo schermo e sulla tastiera; immagine nitida senza difetti evidenti
+
+PAROLE CHIAVE: Commodore PET 2001, computer vintage, museo, esposizione, Pavia, tastiera integrata, schermo monocromatico, bianco, nero, beige, inaugurazione, ctrlalt.museum
+
+DUBBI: nessuno
+
+---
+File: Commodore_PET_2001.jpg
+Cartella: 2022-05-12 ctrlalt.museum Pavia - inaugurazione
+Data: 12/05/2022 14:33 (da EXIF)
+Fotocamera: FUJIFILM X-T4
+Dimensioni: 2000x1333 px (Orizzontale)
+Peso file: 0.24 MB
+Luminosità media: 123.1/255
+Hash percettivo: f4a7039e6a855e98
+Nitidezza (indice): 380.3
+Indizi dalle cartelle: data 12/05/2022 (confermata dall'EXIF); luogo Pavia, Provincia di Pavia, Lombardia, Italia (presunto)
+Generato con: qwen3-vl:8b-instruct (prompt v5.2)

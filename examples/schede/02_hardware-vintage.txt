@@ -1,0 +1,25 @@
+DESCRIZIONE: L’immagine mostra un dispositivo scientifico composto da tubi di vetro trasparenti e componenti metallici fissati con morsetti neri. A sinistra c’è una sfera di vetro con all’interno frammenti scuri, probabilmente materiali solidificati o residui chimici. I tubi sono collegati tra loro e alcuni presentano etichette stampate. Il tutto è immerso in una luce blu intensa, che conferisce un aspetto quasi artificiale alla scena. Non si osserva alcuna azione dinamica; il contesto suggerisce un’esposizione statica, forse in un museo o in un laboratorio.
+
+TESTI VISIBILI: (EU) N°10/2011 - Sim. A,B,C 049433 017 01
+
+LUOGO E PERIODO: Varsavia, Polonia, 22 agosto 2023, ore 10:59
+
+CATEGORIA: hardware-vintage
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: tubi di vetro, sfera di vetro, residui solidi, etichetta europea, dispositivo scientifico, esposizione museale, illuminazione blu, componenti metallici, morsetti neri
+
+---
+File: 02_hardware-vintage.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2023-08-22 Varsavia - Copernico - Museo
+Data: 22/08/2023 10:59 (da EXIF)
+Fotocamera: FUJIFILM X-T4 · XF16-80mmF4 R OIS WR
+Software: Digital Camera X-T4 Ver2.00
+Scatto: f/11 · 1/60 s · ISO 6400 · 58.6 mm
+Dimensioni: 6240x4160 px (Orizzontale)
+Peso file: 13.62 MB
+Luminosità media: 97.8/255
+Hash percettivo: f79ccc5e0d5a5025
+Nitidezza (indice): 313.3
+Generato con: qwen3-vl:8b-instruct (prompt v4)

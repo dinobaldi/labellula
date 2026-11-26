@@ -1,0 +1,30 @@
+DESCRIZIONE: Vista ravvicinata di un pedale di comando all’interno di un veicolo, probabilmente un carrello elevatori Piaggio. Il pedale è nero con superficie antiscivolo, fissato su una struttura bianca con viti visibili. Al centro, un’apertura rettangolare rivestita di rosso mostra meccanismi metallici interni, tra cui un’asta e un sistema di leve. Sul lato sinistro si estende una pedana grigia con righe parallele per la presa. In alto, un bordo curvo di colore turchese. L’ambiente appare pulito ma con tracce di usura sulle parti metalliche.
+
+TESTI VISIBILI: nessuno
+
+LUOGO E PERIODO: Pontedera Museo Piaggio, 17 agosto 2021
+
+CATEGORIA: lavoro-carrelli
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: pedale, meccanismo, apertura, tubo metallico, viti, pedana, museo, carrello elevatore, Piaggio, dettaglio, interno, struttura bianca, turchese
+
+---
+File: 07_lavoro-carrelli.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2021-08-17 1 Pontedera Museo Piaggio
+Data: 17/08/2021 10:22 (da EXIF)
+Fotocamera: FUJIFILM FinePix XP80 XP81 XP85
+Software: Digital Camera FinePix XP80 XP81 XP85 Ver1.00
+Scatto: f/3.9 · 1/125 s · ISO 400 · 5 mm
+Dimensioni: 4608x3456 px (Orizzontale)
+Peso file: 5.73 MB
+Luminosità media: 132.8/255
+Hash percettivo: b524e4cb1be087f8
+Nitidezza (indice): 653.4
+Generato con: qwen3-vl:8b-instruct (prompt v4)
+
+
+---
+RILEVAMENTO VOLTI: 0 volti identificati
+MOTORE: YUNET (Tempo: 1.00s)

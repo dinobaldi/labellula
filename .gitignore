@@ -1,0 +1,46 @@
+# Dati personali e risultati: MAI nel repository
+*.jpg
+*.jpeg
+*.JPG
+*.png
+*.dng
+*.raf
+*.pdf
+_txt/
+_faces/
+txt_*/
+_biometrics_db/
+_face_crops/
+chroma_db/
+*.sqlite3
+people_map*.json
+labellula_identita*.json
+identity_constraints*.json
+persone_identificate*.txt
+parenti_confermati*.txt
+albero_genealogico*.html
+*.log
+da_verificare.txt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Configurazione locale (percorsi personali)
+config.yaml
+
+# Eccezione: esempi pubblicabili (foto ridotte, senza EXIF, senza persone)
+!examples/foto/*.jpg
+
+# Indice e miniature generati
+dati/
+!docs/logo/*.png
+!docs/logo/*.ico
+!labellula/web/*.png
+# Archivio dimostrativo (foto del museo, schede gia' pronte)
+!examples/demo/**/*.jpg
+!examples/demo/**/_txt/
+!examples/demo/**/_txt/*.txt

@@ -1,0 +1,30 @@
+DESCRIZIONE: L’immagine mostra l’ingresso di una galleria sotterranea illuminata artificialmente. Al centro della parete si trova un grande affresco circolare inciso nella roccia con un motivo geometrico al centro e tanti piccoli pannelli rettangolari attorno. Sopra l'affresco c'è un cartello luminoso bianco con testi in polacco e inglese. A destra si vede un corridoio buio con pareti rivestite di pannelli bianchi e pavimento lucido. A sinistra c'è una porta di legno scuro e un bidone nero. L’ambiente appare umido e ruvido, tipico di una miniera o di un sito storico sotterraneo.
+
+TESTI VISIBILI: KOMORA STANISŁAWA STASZICA, SPRZED 1866 R., THE STANISLAW STASZIC CHAMBER, FIRST LIST OF WORLD HERITAGE, DZIEJOWEGO DEPOTU
+
+LUOGO E PERIODO: Cracovia, Polonia, il 18 agosto 2023 alle ore 18:02
+
+CATEGORIA: viaggi-e-vacanze
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: galleria sotterranea, affresco roccioso, cartello illuminato, corridoio minerario, Stanisław Staszic Chamber, patrimonio mondiale, parete in pietra, pavimento lucido
+
+---
+File: 17_viaggi-e-vacanze.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2023-08-18 Cracovia
+Data: 18/08/2023 18:02 (da EXIF)
+Fotocamera: FUJIFILM X-T4 · XF16-80mmF4 R OIS WR
+Software: Digital Camera X-T4 Ver2.00
+Scatto: f/4 · 1/34 s · ISO 6400 · 37.6 mm
+Dimensioni: 6240x4160 px (Orizzontale)
+Peso file: 10.42 MB
+Luminosità media: 41.8/255
+Hash percettivo: 9d523295d869676c
+Nitidezza (indice): 378.5
+Generato con: qwen3-vl:8b-instruct (prompt v4)
+
+
+---
+RILEVAMENTO VOLTI: 0 volti identificati
+MOTORE: YUNET (Tempo: 0.46s)

@@ -1,0 +1,25 @@
+DESCRIZIONE: L’immagine mostra un primo piano di fiori rosa vivaci con petali sottili e lunghi, spuntati tra foglie verdi lucide e allungate. Le foglie hanno forma lanceolata e sono disposte in modo compatto, creando uno sfondo fitto e vibrante. La luce solare illumina alcune parti della pianta, creando contrasti tra zone illuminate e ombre profonde. I fiori sembrano essere in piena fioritura, alcuni completamente aperti mentre altri appaiono più piccoli o ancora chiusi. L’ambiente appare naturale, probabilmente un terreno selvatico o un giardino non curato.
+
+TESTI VISIBILI: nessuno
+
+LUOGO E PERIODO: Albissola - Celle - Varazze, 27 febbraio 2022 alle ore 17:21
+
+CATEGORIA: insetti-e-natura
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: fiori rosa, foglie verdi, pianta selvatica, petali sottili, luce solare, ombre, vegetazione, natura, fiore, verde, rosa, esterno
+
+---
+File: 12_insetti-e-natura.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2022-02-28 Albissola - Celle - Varazze
+Data: 27/02/2022 17:21 (da EXIF)
+Fotocamera: FUJIFILM X-T4 · XF16-80mmF4 R OIS WR
+Software: Digital Camera X-T4 Ver1.22
+Scatto: f/5 · 1/200 s · ISO 160 · 80 mm
+Dimensioni: 6240x4160 px (Orizzontale)
+Peso file: 12.48 MB
+Luminosità media: 66.6/255
+Hash percettivo: ce83b8f6548ca17a
+Nitidezza (indice): 1408.4
+Generato con: qwen3-vl:8b-instruct (prompt v4)

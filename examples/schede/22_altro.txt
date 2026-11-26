@@ -1,0 +1,25 @@
+DESCRIZIONE: L’immagine mostra un modello LEGO di un edificio residenziale a più piani con facciata in mattoni marroni e balconi decorati con piante. Sulla sommità dell’edificio c’è un terrazzo verde con fiori rosa e vegetazione. Al piano terra ci sono negozi con tende a righe rosse e bianche. La scena include una strada con marciapiedi, automobili e biciclette LEGO, lampade da strada, segnali stradali e pedoni. Sul lato sinistro della strada c’è un grande cartello pubblicitario con scritte visibili. Le finestre dell’edificio sono illuminate dall’interno, creando un effetto caldo. Il tutto è posizionato su una superficie bianca, probabilmente un tavolo, con sedie bianche sullo sfondo.
+
+TESTI VISIBILI: VIA MINGIO STREET
+
+LUOGO E PERIODO: non determinabile
+
+CATEGORIA: altro
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: LEGO, edificio, strada, pedoni, bicicletta, auto, balconi, fiori, illuminazione, cartello, terrazzo
+
+---
+File: 22_altro.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2022-07-30 Legofest Lecco
+Data: 30/07/2022 14:37 (da EXIF)
+Fotocamera: FUJIFILM X-T4 · XF16-80mmF4 R OIS WR
+Software: Digital Camera X-T4 Ver1.22
+Scatto: f/4 · 1/58 s · ISO 320 · 41.1 mm
+Dimensioni: 4160x6240 px (Verticale)
+Peso file: 12.33 MB
+Luminosità media: 115.9/255
+Hash percettivo: e3c38cf8e09c94f1
+Nitidezza (indice): 779.4
+Generato con: qwen3-vl:8b-instruct (prompt v4)

@@ -1,0 +1,25 @@
+DESCRIZIONE: Un gatto nero con macchie bianche seduto su un bordo di cemento, guarda verso destra. Dietro di lui c’è terra bruna e vegetazione fitta, con rami e foglie scure. A sinistra si vede il lato superiore di un muretto basso, con superficie grigia e tracce di vernice rosa sbiadita. La luce è calda e diretta, probabilmente dal sole al tramonto, creando ombre nette sul terreno e sui muri. Il gatto ha gli occhi gialli e la testa rivolta lateralmente.
+
+TESTI VISIBILI: nessuno
+
+LUOGO E PERIODO: Albissola, 31 ottobre 2021 alle 18:40
+
+CATEGORIA: insetti-e-natura
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: gatto, nero, bianco, cemento, muro, vegetazione, terra, ombra, tramonto, animale, notte, esterno, strada, giardino
+
+---
+File: 13_insetti-e-natura.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2021-10-28 Albissola - bagno, street
+Data: 31/10/2021 18:40 (da EXIF)
+Fotocamera: FUJIFILM X-T4 · XF16-80mmF4 R OIS WR
+Software: Digital Camera X-T4 Ver1.22
+Scatto: f/4 · 1/5 s · ISO 3200 · 72.1 mm
+Dimensioni: 6240x4160 px (Orizzontale)
+Peso file: 12.16 MB
+Luminosità media: 56.7/255
+Hash percettivo: a66e5965536d3630
+Nitidezza (indice): 435.5
+Generato con: qwen3-vl:8b-instruct (prompt v4)

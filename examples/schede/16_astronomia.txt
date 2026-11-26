@@ -1,0 +1,30 @@
+DESCRIZIONE: L’immagine mostra il cielo sereno di colore blu chiaro con la luna visibile in fase crescente, posizionata al centro-superiore della composizione. In primo piano, rami spogli e contorti di un albero senza foglie si stagliano contro il cielo; alcuni rami presentano spine appuntite. La luce del tramonto o dell'alba illumina debolmente i rami, creando contrasti tra le zone illuminate e quelle in ombra.
+
+TESTI VISIBILI: nessuno
+
+LUOGO E PERIODO: Orbetello, 17 agosto 2021 alle ore 20:12
+
+CATEGORIA: astronomia
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: luna crescente, albero spoglio, rami secchi, cielo blu, tramonto, natura, silhouette, astrofotografia, ramificazioni, spine
+
+---
+File: 16_astronomia.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2021-08-17 2 Orbetello
+Data: 17/08/2021 20:12 (da EXIF)
+Fotocamera: FUJIFILM X-M1 · XC16-50mmF3.5-5.6 OIS
+Software: Digital Camera X-M1 Ver1.50
+Scatto: f/5.6 · 1/280 s · ISO 200 · 50 mm
+Dimensioni: 4896x3264 px (Orizzontale)
+Peso file: 3.49 MB
+Luminosità media: 145.2/255
+Hash percettivo: d8e730ceb5482ad3
+Nitidezza (indice): 1825.9
+Generato con: qwen3-vl:8b-instruct (prompt v4)
+
+
+---
+RILEVAMENTO VOLTI: 0 volti identificati
+MOTORE: YUNET (Tempo: 0.97s)

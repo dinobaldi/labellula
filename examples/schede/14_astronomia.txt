@@ -1,0 +1,30 @@
+DESCRIZIONE: In una notte stellata, si vede la silhouette di un edificio con campanile illuminato, probabilmente una chiesa, posizionato su una collina circondato da alberi. Le foglie degli alberi in primo piano appaiono come sagome nere contro il cielo. Alcuni rami sono visibili nella parte superiore sinistra dell’immagine. Il cielo è completamente nero e punteggiato da molte stelle. La luce proveniente dall’edificio illumina parzialmente le case circostanti e alcuni alberi sulla destra, che assumono una tonalità verde-gialla.
+
+TESTI VISIBILI: nessuno
+
+LUOGO E PERIODO: non determinabile
+
+CATEGORIA: astronomia
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: notte, stelle, chiesa, campanile, alberi, cielo, illuminazione, siluette, paesaggio, montagna, verde, bianco, nero
+
+---
+File: 14_astronomia.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2021-08-10 Ascona-macro-passeggiata
+Data: 09/08/2021 23:06 (da EXIF)
+Fotocamera: FUJIFILM X-M1 · XC16-50mmF3.5-5.6 OIS
+Software: Digital Camera X-M1 Ver1.50
+Scatto: f/5.3 · 20 s · ISO 3200 · 37.1 mm
+Dimensioni: 4896x3264 px (Orizzontale)
+Peso file: 2.80 MB
+Luminosità media: 12.3/255
+Hash percettivo: 8eb331ce30cdd370
+Nitidezza (indice): 565.8
+Generato con: qwen3-vl:8b-instruct (prompt v4)
+
+
+---
+RILEVAMENTO VOLTI: 0 volti identificati
+MOTORE: YUNET (Tempo: 0.99s)

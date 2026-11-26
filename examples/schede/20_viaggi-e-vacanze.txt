@@ -1,0 +1,33 @@
+DESCRIZIONE: Una via sterrata con aspetto rustico si snoda verso l’alto su uno sperone erboso sotto cielo nuvolosamente grigio; sul versanti sporgono diverse torri radiofonici metalliche alte ed intricate tra cui la più imponente al centro della composizione presenta antenne sfericate bianche disposti verticalmente lungo il suo corpo tubolare nero-giallastro mentre altre strutture simmetriche affiancano lo scenario sulla sinistra dove anche appare costruzione bassa color ocra circondata dal verde del terreno selvatico.
+
+TESTI VISIBILI:
+Segnala “3 km” insieme ad altri segni di pericolo come triangoli rossi invertiti;
+un cartello tondo rosso bordato da cerchio continuativo (proibito);
+altri due piccoli pannellini rettangolari fissati a basamenti marmoretti ma illeggibile testuale;
+
+LUOGO E PERIODO: Parco Majella, Italia – 25 agosto 2021
+
+CATEGORIA: viaggi-e-vacanze 
+
+PERSONE: nessuna  
+
+PAROLE CHIAVE: parco majella , strada sterrata con asfaltatura iniziale ;torre telecomunicazioni meteo radar elettronico grigio nuvole coperte vegetazione erbosa montagna alta paesaggio naturale senza persone
+
+---
+File: 20_viaggi-e-vacanze.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2021-08-25 1 Parco Majella
+Data: 25/08/2021 13:57 (da EXIF)
+Fotocamera: FUJIFILM X-M1 · XC16-50mmF3.5-5.6 OIS
+Software: Digital Camera X-M1 Ver1.50
+Scatto: f/8 · 1/420 s · ISO 200 · 23.2 mm
+Dimensioni: 4896x3264 px (Orizzontale)
+Peso file: 3.80 MB
+Luminosità media: 121.1/255
+Hash percettivo: b3b3045cbd007ff0
+Nitidezza (indice): 473.4
+Generato con: qwen3-vl:8b-instruct (prompt v4)
+
+
+---
+RILEVAMENTO VOLTI: 0 volti identificati
+MOTORE: YUNET (Tempo: 0.99s)

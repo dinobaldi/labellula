@@ -1,0 +1,30 @@
+DESCRIZIONE: In un ambiente buio con pareti di pietra, si vede un carrello elevatore antico su un piano di esposizione illuminato. Il carrello ha una struttura metallica nera, catene pendenti, e una piattaforma di legno consumata. Sopra il carrello, un sistema di catene e ruote è visibile. L’ambiente sembra essere un museo o una galleria storica, con luci puntate che evidenziano l’oggetto. Sul pavimento, davanti al piano d’esposizione, ci sono mattonelle esagonali illuminate.
+
+TESTI VISIBILI: nessuno
+
+LUOGO E PERIODO: Cracovia, 18 agosto 2023
+
+CATEGORIA: lavoro-carrelli
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: carrello elevatore, metallo arrugginito, legno consumato, catene, ambiente museale, illuminazione a led, parete in pietra, esposizione, storia industriale, oggetti vintage
+
+---
+File: 06_lavoro-carrelli.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2023-08-18 Cracovia
+Data: 18/08/2023 18:48 (da EXIF)
+Fotocamera: FUJIFILM X-T4 · XF16-80mmF4 R OIS WR
+Software: Digital Camera X-T4 Ver2.00
+Scatto: f/4 · 1/7 s · ISO 6400 · 16 mm
+Dimensioni: 4160x6240 px (Verticale)
+Peso file: 9.63 MB
+Luminosità media: 24.5/255
+Hash percettivo: d0619f60be618e73
+Nitidezza (indice): 521.8
+Generato con: qwen3-vl:8b-instruct (prompt v4)
+
+
+---
+RILEVAMENTO VOLTI: 0 volti identificati
+MOTORE: YUNET (Tempo: 0.49s)

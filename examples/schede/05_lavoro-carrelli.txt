@@ -1,0 +1,24 @@
+DESCRIZIONE: In primo piano, un grande componente meccanico arancione lucido, probabilmente parte di un carrello elevatore o attrezzatura simile, poggiato su una palette di legno. Sullo sfondo si intravede un altro carrello elevatore con cabina nera e dettagli arancioni, parzialmente visibile. L’ambiente è un magazzino o officina industriale con pareti bianche, pavimento grigio, scaffalature metalliche arancioni e blu, e vari oggetti industriali sparsi. Sulla destra c’è un tavolo con attrezzi e materiali. La luce è artificiale e diffusa.
+
+TESTI VISIBILI: sulle mensole posteriori, la scritta "FÖRCH" ripetuta più volte, ma non completamente leggibile a causa dell'angolazione e della distanza.
+
+LUOGO E PERIODO: non determinabile
+
+CATEGORIA: lavoro-carrelli
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: carrello elevatore, componente arancione, magazzino industriale, scaffali metallici, FÖRCH, attrezzatura pesante, ambiente lavorativo, paletta di legno, struttura meccanica
+
+---
+File: 05_lavoro-carrelli.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2022-05-12 Test 7artisans 75
+Data: 12/05/2022 08:21 (da EXIF)
+Fotocamera: FUJIFILM X-T4
+Software: Digital Camera X-T4 Ver1.22
+Dimensioni: 6240x4160 px (Orizzontale)
+Peso file: 11.76 MB
+Luminosità media: 115.4/255
+Hash percettivo: cd8d9b23666090df
+Nitidezza (indice): 577.9
+Generato con: qwen3-vl:8b-instruct (prompt v4)

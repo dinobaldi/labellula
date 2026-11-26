@@ -1,0 +1,25 @@
+DESCRIZIONE: Immagine notturna di un muro esterno di un edificio con tetto sporgente e travi visibili. La parete è ricoperta da graffiti multicolori, tra cui grandi lettere bianche "BID", un personaggio nero stilizzato con occhi rotondi, e varie scritte in rosso, blu, giallo e nero. Al centro c’è una finestra con cornice marrone e vetri suddivisi in quattro pannelli; dentro si intravedono elementi metallici e luce interna. A sinistra, un piccolo cartello verde con testo illeggibile e un altro cartello rettangolare bianco opaco. In basso a sinistra, un contenitore per rifiuti nero con maniglie metalliche. Sul lato destro, parte di un'altra finestra è visibile. Il terreno è pavimentato con ciottoli grigi. L'illuminazione proviene da una fonte artificiale, creando contrasti forti tra luci e ombre.
+
+TESTI VISIBILI: Un cartello verde con scritta "Ušnjačka". Sulla parete sono visibili parole come "GAMX-CP", "INSURQ", "CAMEL", "KATA73", "DEVIL", "VXE N", "LEAKS AT", "YRMA", "SNOW.", "NADIDE".
+
+LUOGO E PERIODO: Lubiana, 28 agosto 2023, ore 21:42 (dalla data EXIF).
+
+CATEGORIA: viaggi-e-vacanze
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: muro, graffiti, notte, edificio, finestra, rifiuti, strada, pavimento, illuminazione, arte stradale
+
+---
+File: 19_viaggi-e-vacanze.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2023-08-28 Lubiana
+Data: 27/08/2023 21:42 (da EXIF)
+Fotocamera: FUJIFILM X-T4 · XF16-80mmF4 R OIS WR
+Software: Digital Camera X-T4 Ver2.00
+Scatto: f/4 · 1/27 s · ISO 6400 · 63 mm
+Dimensioni: 4160x6240 px (Verticale)
+Peso file: 12.77 MB
+Luminosità media: 52.7/255
+Hash percettivo: cb3105e8f523f28d
+Nitidezza (indice): 623.2
+Generato con: qwen3-vl:8b-instruct (prompt v4)

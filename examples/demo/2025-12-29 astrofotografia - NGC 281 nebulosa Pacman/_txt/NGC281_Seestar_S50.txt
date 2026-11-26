@@ -1,0 +1,31 @@
+TITOLO: Nebulosa NGC 281 "Pacman" osservata con telescopio Seestar S50
+
+DESCRIZIONE: L’immagine mostra la nebulosa NGC 281, nota anche come “Nebulosa Pacman”, una struttura diffusa di gas ionizzato con tonalità rosse e zone più scure che ricordano il caratteristico profilo del videogioco. È immersa in un campo stellare denso, con migliaia di stelle visibili su uno sfondo nero. La fotografia è stata scattata di notte, probabilmente durante l'ora notturna, sotto cielo limpido e buio. Il soggetto principale occupa la parte centrale dell'inquadratura, mentre lo sfondo è costituito da un ampio campo stellare. I colori dominanti sono il rosso della nebulosa e il nero dello spazio circostante, con punti luminosi bianchi delle stelle. Non c'è alcuna azione dinamica; si tratta di una ripresa statica. Nessun oggetto terrestre o struttura è visibile.
+
+TESTI VISIBILI: Seestar S50, NGC 281, 177min, dino.baldi / 09° E, 45° N / 2025.12.29 23:49
+
+LUOGO E PERIODO: non determinabile (dalla cartella), ma la data e ora indicano 29 dicembre 2025 alle 23:49 (dal nome del file e dalla cartella). L’immagine mostra un cielo notturno senza orizzonte visibile, quindi il luogo non può essere dedotto dall’immagine.
+
+OCCASIONE: osservazione astronomica (dalla cartella).
+
+CATEGORIA: astronomia
+
+PERSONE: nessuna
+
+ASPETTI FOTOGRAFICI: foto notturna con lunga esposizione (177 minuti indicati in sovrimpressione), inquadratura centrale della nebulosa, messa a fuoco precisa sul soggetto principale, nessun difetto evidente come movimento o sfocatura.
+
+PAROLE CHIAVE: nebulosa NGC 281, Seestar S50, campo stellare, rosso, nero, notte, astronomia, osservazione, lunga esposizione, 177min
+
+DUBBI: La data "2025.12.29" è presunta valida perché non verificabile; l'immagine non fornisce informazioni per confermare il luogo di scatto. Le cartelle menzionano “NGC 281 nebulosa Pacman” e “astrofotografia”, ma non ci sono elementi che permettano di determinare un luogo specifico.
+
+---
+File: NGC281_Seestar_S50.jpg
+Cartella: 2025-12-29 astrofotografia - NGC 281 nebulosa Pacman
+Data: sconosciuta (prova a dedurla dalla cartella)
+Dimensioni: 900x1600 px (Verticale)
+Peso file: 0.26 MB
+Luminosità media: 31.9/255
+Hash percettivo: db7324ccca323999
+Nitidezza (indice): 1784.5
+Indizi dalle cartelle: data 29/12/2025 (presunta)
+Generato con: qwen3-vl:8b-instruct (prompt v5.2)

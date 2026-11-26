@@ -1,0 +1,32 @@
+TITOLO: Sinclair ZX Spectrum esposto al museo dell’informatica a Pavia
+
+DESCRIZIONE: L’immagine mostra un computer vintage Sinclair ZX Spectrum con tastiera colorata e pulsanti funzione visibili. Il dispositivo è posizionato su una superficie di legno, con sfondo che include un muro di mattoni rossi, altri oggetti informatici e materiali promozionali del museo. La luce è diffusa, tipica di un ambiente interno durante il pomeriggio primaverile. I colori dominanti sono nero per la struttura del computer e i vari toni dei tasti (verde, giallo, bianco, ecc.). Sono presenti diversi elementi grafici sullo sfondo, tra cui cartelli e pubblicità relative all'evento. L’azione in corso è quella di esposizione museale.
+
+TESTI VISIBILI: Sinclair, ZX Spectrum, MAGENTA, GREEN, CYAN, YELLOW, WHITE, BLACK, DELETE, GRAPHICS, CLOSE, MOVE, ERASE, POINT, CAT, FORMAT, INT, RND, STR$, CHR$, CODE, PEEK, TAB, COS, TAN, SIN, Q, W, E, R, T, Y, U, I, O, P, PLOT, DRAW, REM, RUN, VERIFY, MERGE, RAND, RETURN, DATA, RESTORE, NEW, SAVE, DIM, STEP, F, G, H, J, K, L, M, N, B, V, C, X, Z, CAPS SHIFT, COPY, CLEAR, CONT, PAPER, FLASH, BORDER, BRIGH, LIST, BIN, IN KEY $, VAL, LEN, USR, INPUT, POKE, PRINT, BREAK SPACE, ENTER, LOAD, SCREENS, ATTR
+
+LUOGO E PERIODO: Pavia, Provincia di Pavia, Lombardia (dalla cartella); 12 maggio 2022, pomeriggio (da EXIF)
+
+OCCASIONE: inaugurazione del museo dell’informatica ctrlalt.museum (dalla cartella)
+
+CATEGORIA: hardware-vintage
+
+PERSONE: nessuna
+
+ASPETTI FOTOGRAFICI: scatto in primo piano con angolatura leggermente inclinata; messa a fuoco sul computer; immagine nitida senza difetti evidenti.
+
+PAROLE CHIAVE: Sinclair ZX Spectrum, tastiera colorata, museo informatico, Pavia, inaugurazione, muro mattoni, oggetti vintage, legno, primavera, pomeriggio
+
+DUBBI: nessuno
+
+---
+File: Sinclair_ZX_Spectrum.jpg
+Cartella: 2022-05-12 ctrlalt.museum Pavia - inaugurazione
+Data: 12/05/2022 14:34 (da EXIF)
+Fotocamera: FUJIFILM X-T4
+Dimensioni: 2000x1333 px (Orizzontale)
+Peso file: 0.33 MB
+Luminosità media: 131.9/255
+Hash percettivo: b389d6fdc04acb30
+Nitidezza (indice): 500.4
+Indizi dalle cartelle: data 12/05/2022 (confermata dall'EXIF); luogo Pavia, Provincia di Pavia, Lombardia, Italia (presunto)
+Generato con: qwen3-vl:8b-instruct (prompt v5.2)

@@ -1,0 +1,25 @@
+DESCRIZIONE: L'immagine mostra un meccanismo interno di un carrello elevatori, con una fune di corda grezza che pende verticalmente attraverso una struttura in legno scuro e consumato. Sopra la fune si intravedono componenti metallici, tra cui una catena di trasmissione e parti di un sistema di ingranaggi. Il legno presenta segni di usura, crepe e macchie, indicando un'età avanzata o un uso intenso. La luce entra dall’alto, illuminando parzialmente la fune e le parti metalliche, mentre il resto rimane in ombra.
+
+TESTI VISIBILI: nessuno
+
+LUOGO E PERIODO: Bratislava, 27 agosto 2023, ore 10:33
+
+CATEGORIA: lavoro-carrelli
+
+PERSONE: nessuna
+
+PAROLE CHIAVE: carrello elevatore, fune di corda, legno vecchio, ingranaggi, meccanismo, metallo, restauro, dettaglio, ambiente industriale, attrezzatura antica
+
+---
+File: 08_lavoro-carrelli.jpg (originale ridotto a 1600 px, EXIF rimossi)
+Cartella: 2023-08-27 Bratislava
+Data: 27/08/2023 10:33 (da EXIF)
+Fotocamera: FUJIFILM X-T4 · XF16-80mmF4 R OIS WR
+Software: Digital Camera X-T4 Ver2.00
+Scatto: f/4 · 1/50 s · ISO 6400 · 34.2 mm
+Dimensioni: 4160x6240 px (Verticale)
+Peso file: 14.34 MB
+Luminosità media: 98.1/255
+Hash percettivo: d3e496fb1368cc84
+Nitidezza (indice): 478.4
+Generato con: qwen3-vl:8b-instruct (prompt v4)
