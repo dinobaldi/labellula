@@ -2,7 +2,25 @@
 
 Le modifiche che cambiano l'installazione o l'uso vanno annotate qui e nella [guida](docs/GUIDA.md).
 
-## 0.2.0 (in sviluppo)
+## 0.2.1 (27/11/2026)
+
+**Correzioni**
+- Un lavoro che non riusciva a partire (per esempio con l'elaborazione remota, ancora in preparazione) restava «in corso» per sempre: «Descrivi foto», «Imposta come archivio» e il cambio di Ollama rispondevano «aspetta la fine del lavoro» fino al riavvio.
+- «A lotti» saltava le foto che stanno direttamente nella cartella scelta, quando c'erano anche sottocartelle. Ora sono il primo lotto. Il limite («Prova: solo le prime 20 foto») vale per tutto il lavoro, non per ogni lotto, e con una cartella fuori dall'archivio gli indizi di ogni lotto partono dalla cartella scelta.
+- Una ricerca durante l'aggiornamento dell'indice poteva rispondere «Cannot operate on a closed database»: ora l'indice viene sostituito solo quando le ricerche in corso hanno finito.
+- L'evidenziazione delle parole cercate non si sposta più con testi che hanno accenti staccati (NFD), legature o emoji.
+- Le cartelle nascoste (che iniziano con un punto, come `.thumbnails`) non vengono più esplorate cercando le foto.
+- Luoghi: «Munich» diventa «Monaco di Baviera», per non confonderlo con il Principato di Monaco.
+
+**Sicurezza**
+- Dalla rete di casa (telefono, tablet) si cerca e si guarda; le impostazioni si cambiano solo dal computer con Labellula. In particolare non si possono più cambiare l'Ollama a cui vanno le foto (né provarne uno), l'archivio, la lingua e la rete.
+- Dalla rete si sfogliano e si descrivono solo le cartelle dell'archivio, non tutto il disco.
+- Gli errori inattesi mostrati ai dispositivi della rete non contengono più percorsi interni.
+
+**Schede**
+- Il piè della scheda riporta la cartella relativa all'archivio (`Cartella: 2024/2024-02-04 gara karate Torino`) invece del percorso completo del disco: niente nome utente o lettera dell'unità nelle schede condivise o esportate. Le schede già scritte restano valide.
+
+## 0.2.0 (26/11/2026)
 
 **Installazione**
 - `LEGGIMI - COME INSTALLARE.txt` nella cartella principale: istruzioni in testo semplice per chi riceve lo ZIP senza passare da GitHub.

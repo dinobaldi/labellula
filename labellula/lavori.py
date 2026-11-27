@@ -90,16 +90,30 @@ class GestoreLavori:
         """`a_lotti`: descrive una sottocartella alla volta e aggiorna la ricerca dopo ognuna
         (per i lavori lunghi: se si ferma, quello che è fatto è già cercabile)."""
         from .descrizione import Opzioni, esegui
+        from .indice import trova_foto
         from .motori import MotoreOllama, crea_motore
         c = Path(cartella)
         if not c.is_dir():
             raise FileNotFoundError(f"Cartella non trovata: {cartella}")
-        salta = {s.lower() for s in self.cfg["archivio"]["salta_cartelle"]}
-        lotti = [c]
+        a = self.cfg["archivio"]
+        salta = {s.lower() for s in a["salta_cartelle"]}
+        lotti = [(c, True)]                       # (cartella, con le sottocartelle?)
         if a_lotti:
             sotto = sorted(x for x in c.iterdir() if x.is_dir() and not x.name.startswith(("_", "."))
                            and x.name.lower() not in salta)
-            lotti = sotto or [c]
+            if sotto:
+                # le foto che stanno direttamente nella cartella scelta sono un lotto a sé
+                sciolte = next(trova_foto(c, a["estensioni"], a["salta_cartelle"], ricorsiva=False), None)
+                lotti = ([(c, False)] if sciolte else []) + [(x, True) for x in sotto]
+        # Motore e opzioni prima di segnare il lavoro come attivo: se qui c'è un errore
+        # (es. motore "remoto" non ancora disponibile) non resta un lavoro "in corso" fantasma.
+        motore = MotoreOllama(self.cfg["modello"]["ollama_url"], modello) if modello else crea_motore(self.cfg)
+        opzioni = Opzioni.da_config(self.cfg)
+        try:
+            c.resolve().relative_to(self.cfg.radice_archivio.resolve())
+            opzioni.radice = self.cfg.radice_archivio     # dentro l'archivio: le cartelle superiori sono indizi
+        except (ValueError, OSError):
+            opzioni.radice = c                            # fuori: gli indizi partono dalla cartella scelta
         with self._lock:
             if self._stato.get("attivo"):
                 raise RuntimeError("C'è già un lavoro in corso: aspetta che finisca o fermalo.")
@@ -108,13 +122,6 @@ class GestoreLavori:
                            "totale": None, "foto": "", "esito": "", "secondi_mancanti": None,
                            "iniziato": time.strftime("%H:%M:%S"), "messaggi": [],
                            "lotti": len(lotti), "lotto": 0, "fatte_totali": 0}
-        motore = MotoreOllama(self.cfg["modello"]["ollama_url"], modello) if modello else crea_motore(self.cfg)
-        opzioni = Opzioni.da_config(self.cfg)
-        try:
-            c.resolve().relative_to(self.cfg.radice_archivio.resolve())
-            opzioni.radice = self.cfg.radice_archivio     # dentro l'archivio: le cartelle superiori sono indizi
-        except (ValueError, OSError):
-            opzioni.radice = None
 
         def messaggio(s: str):
             with self._lock:
@@ -125,14 +132,17 @@ class GestoreLavori:
             _non_dormire(True)
             try:
                 somma = {"totale": 0, "fatte": 0, "errori": 0, "da_verificare": 0, "secondi": 0.0}
-                for k, lotto in enumerate(lotti, 1):
+                for k, (lotto, ricorsiva) in enumerate(lotti, 1):
                     if self._stop.is_set():
                         break
+                    resto = limite - somma["fatte"] - somma["errori"] if limite else 0
+                    if limite and resto <= 0:          # il limite vale per tutto il lavoro, non per ogni lotto
+                        break
                     self._aggiorna(fase="descrizione", lotto=k, nome_lotto=lotto.name)
-                    r = esegui(lotto, motore, opzioni, self.cfg["archivio"]["estensioni"],
-                               self.cfg["archivio"]["salta_cartelle"], self.cfg.cartella_dati,
-                               limite=limite, rifai=rifai, aggiorna=aggiorna, stampa=messaggio,
-                               avanzamento=lambda d: self._aggiorna(**d), fermati=self._stop.is_set)
+                    r = esegui(lotto, motore, opzioni, a["estensioni"], a["salta_cartelle"], self.cfg.cartella_dati,
+                               limite=resto, rifai=rifai, aggiorna=aggiorna, stampa=messaggio,
+                               avanzamento=lambda d: self._aggiorna(**d), fermati=self._stop.is_set,
+                               ricorsiva=ricorsiva)
                     for x in somma:
                         somma[x] += r.get(x, 0)
                     self._aggiorna(risultato=dict(somma), fatte_totali=somma["fatte"])

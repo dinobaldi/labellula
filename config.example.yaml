@@ -66,6 +66,6 @@ volti:
   # Modulo opzionale: spento di default.
   # Se attivo, la ricerca mostra anche le persone del registro labellula_identita.json
   attivo: false
-  # Database vettoriale e cache dei ritagli (meglio su SSD)
-  cartella_db: "E:/_biometrics_db"
+  # Database vettoriale e cache dei ritagli (meglio su SSD), per il futuro modulo volti
+  cartella_db: ""
   dimensione_minima_px: 80

@@ -22,21 +22,30 @@ function normalizza(s) { return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLow
 function evidenzia(testo, q) {
   const parole = (q || "").split(/[^\p{L}\p{N}]+/u).filter((p) => p.length > 1).map(normalizza);
   if (!parole.length || !testo) return esc(testo);
-  const t = String(testo), norm = normalizza(t);
-  const segni = new Array(t.length).fill(false);
+  // Si normalizza un carattere alla volta e si ricorda da quale carattere originale viene ogni lettera:
+  // così l'evidenziazione resta al posto giusto anche quando il testo normalizzato ha un'altra lunghezza
+  // (testi già scomposti NFD, legature, emoji).
+  const car = Array.from(String(testo));
+  let norm = "";
+  const origine = [];
+  car.forEach((c, i) => { const n = normalizza(c); norm += n; for (let k = 0; k < n.length; k++) origine.push(i); });
+  const segni = new Array(car.length).fill(false);
   for (const p of parole) {
     const re = new RegExp("(^|[^\\p{L}\\p{N}])(" + p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gu");
     let m;
     while ((m = re.exec(norm))) {
       const inizio = m.index + m[1].length;
-      for (let i = inizio; i < inizio + m[2].length; i++) segni[i] = true;
+      for (let i = inizio; i < inizio + m[2].length; i++) segni[origine[i]] = true;
+      if (m[0].length === 0) re.lastIndex++;
     }
   }
+  // accenti staccati (NFD) e simili: seguono la lettera a cui sono attaccati
+  for (let i = 1; i < car.length; i++) if (!normalizza(car[i])) segni[i] = segni[i - 1];
   let out = "", dentro = false;
-  for (let i = 0; i < t.length; i++) {
+  for (let i = 0; i < car.length; i++) {
     if (segni[i] && !dentro) { out += "<mark>"; dentro = true; }
     if (!segni[i] && dentro) { out += "</mark>"; dentro = false; }
-    out += esc(t[i]);
+    out += esc(car[i]);
   }
   return out + (dentro ? "</mark>" : "");
 }
@@ -138,6 +147,8 @@ async function caricaFiltri() {
   const rete = info.rete || {};
   $("f-esci").hidden = rete.da_questo_computer !== false;      // chi entra dalla rete può uscire
   $("sez-rete").hidden = !rete.da_questo_computer;               // la rete si imposta solo da questo computer
+  // dalla rete di casa: niente cambio di archivio né di Ollama (il server li rifiuta comunque)
+  for (const el of document.querySelectorAll(".solo-locale")) el.hidden = rete.da_questo_computer === false;
   mostraRete(rete);
   if (info.in_demo) {
     $("fascia-testo").innerHTML = T("Stai guardando l'<b>archivio dimostrativo</b>: foto di ctrlalt.museum. Per le tue foto: <b>＋ Descrivi foto</b> › scegli la cartella › <b>Imposta come archivio</b>.");
@@ -290,6 +301,10 @@ async function contaFoto() {
 async function avviaLavoro() {
   if (!sfoglia.percorso) return;
   // Le schede di una cartella fuori dall'archivio non entrano nella ricerca: meglio dirlo prima, non dopo.
+  if ((!sfoglia.inArchivio || sfoglia.inDemo) && stato.info.rete && stato.info.rete.da_questo_computer === false) {
+    $("c-info").textContent = T("Dalla rete si descrivono solo cartelle dell'archivio.");
+    return;
+  }
   if (!sfoglia.inArchivio || sfoglia.inDemo) {
     const domanda = sfoglia.inDemo
       ? T("Ora la ricerca mostra l'archivio dimostrativo. Uso \"{p}\" come tuo archivio, così le schede nuove si possono cercare?", { p: sfoglia.percorso })

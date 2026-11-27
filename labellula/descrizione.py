@@ -9,7 +9,7 @@ le foto che hanno già una scheda vengono saltate.
 from __future__ import annotations
 
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import datetime
 from pathlib import Path
 from typing import Callable
@@ -227,9 +227,22 @@ def degenerata(testo: str) -> bool:
 
 
 # ---------------------------------------------------------------- scheda
-def piede(foto: Path, info: F.InfoFoto, modello: str, versione: str = "v4", lingua: str = "it") -> list[str]:
+def cartella_relativa(foto: Path, radice: Path | None) -> str:
+    """Cartella della foto rispetto alla radice dell'archivio, con barre "/" ("." se è la radice).
+    Nella scheda non finisce il percorso completo del disco (nome utente, lettere di unità): la scheda
+    resta valida se l'archivio si sposta e si può condividere senza rivelare com'è fatto il computer."""
+    if radice is not None:
+        try:
+            return foto.parent.resolve().relative_to(Path(radice).resolve()).as_posix() or "."
+        except (ValueError, OSError):
+            pass
+    return foto.parent.name or "."
+
+
+def piede(foto: Path, info: F.InfoFoto, modello: str, versione: str = "v4", lingua: str = "it",
+          radice: Path | None = None) -> list[str]:
     e, m = info.exif, info.metriche
-    righe = [f"File: {foto.name}", f"Cartella: {foto.parent}", f"Data: {info.quando}"]
+    righe = [f"File: {foto.name}", f"Cartella: {cartella_relativa(foto, radice)}", f"Data: {info.quando}"]
     if info.luogo:
         righe.append(f"Luogo GPS: {info.luogo}")
     camera = " ".join(str(x) for x in (e.get("Make"), e.get("Model")) if x)
@@ -282,7 +295,7 @@ def descrivi_foto(foto: Path, motore, opzioni: "Opzioni") -> tuple[Path, bool, s
         da_verificare = r.troncata or degenerata(r.testo)
     testo = (AVVISO_RIPETIZIONE if da_verificare else "") + ripulisci(r.testo)
     dest = file_scheda(foto, opzioni.cartella_txt)
-    scrivi_scheda(dest, testo, piede(foto, info, motore.nome, opzioni.versione, opzioni.lingua))
+    scrivi_scheda(dest, testo, piede(foto, info, motore.nome, opzioni.versione, opzioni.lingua, opzioni.radice))
     import re
     m = re.search(r"^\s*(?:TITOLO|TITLE):\s*(.+)$", testo, re.M)
     return dest, da_verificare, (m.group(1).strip() if m else "")
@@ -337,12 +350,12 @@ def _categorie(da_config, lingua: str) -> list[str]:
 
 
 def da_fare(radice: Path, estensioni, salta_cartelle, cartella_txt: str, rifai: bool = False,
-            aggiorna_a: str | None = None):
+            aggiorna_a: str | None = None, ricorsiva: bool = True):
     """(totale foto, foto da descrivere, foto con lo stesso nome di un'altra nella stessa cartella).
 
     `aggiorna_a="v5.1"`: rifà solo le schede generate con un prompt diverso (si riprende da dove si era)."""
     totale, visti, lista, doppi = 0, set(), [], []
-    for f in trova_foto(radice, estensioni, salta_cartelle):
+    for f in trova_foto(radice, estensioni, salta_cartelle, ricorsiva):
         totale += 1
         dest = file_scheda(f, cartella_txt)
         if dest in visti:   # es. IMG_1.jpg e IMG_1.png: una sola scheda possibile (limite del formato)
@@ -356,15 +369,18 @@ def da_fare(radice: Path, estensioni, salta_cartelle, cartella_txt: str, rifai: 
 
 def esegui(radice: Path, motore, opzioni: Opzioni, estensioni, salta_cartelle, cartella_log: Path,
            limite: int = 0, rifai: bool = False, stampa: Callable[[str], None] = print, aggiorna: bool = False,
-           avanzamento: Callable[[dict], None] | None = None, fermati: Callable[[], bool] | None = None) -> dict:
+           avanzamento: Callable[[dict], None] | None = None, fermati: Callable[[], bool] | None = None,
+           ricorsiva: bool = True) -> dict:
     """`avanzamento` riceve un dizionario dopo ogni foto; se `fermati()` diventa vero il lotto si ferma
-    alla foto successiva (le schede già scritte restano)."""
+    alla foto successiva (le schede già scritte restano). `ricorsiva=False`: solo le foto direttamente
+    nella cartella, non quelle delle sottocartelle."""
     motore.controlla()
-    if opzioni.radice is None:
-        opzioni.radice = radice
+    if opzioni.radice is None:          # copia: le opzioni di chi chiama restano com'erano
+        opzioni = replace(opzioni, radice=radice)
     stampa(f"Cerco le foto in {radice} ... (modello {motore.nome}, prompt {etichetta(opzioni.versione, opzioni.lingua)})")
     totale, lista, doppi = da_fare(radice, estensioni, salta_cartelle, opzioni.cartella_txt, rifai,
-                                   aggiorna_a=etichetta(opzioni.versione, opzioni.lingua) if aggiorna else None)
+                                   aggiorna_a=etichetta(opzioni.versione, opzioni.lingua) if aggiorna else None,
+                                   ricorsiva=ricorsiva)
     stampa(f"Trovate {totale} foto, da descrivere: {len(lista)}"
            + (f" ({len(doppi)} saltate perché hanno lo stesso nome di un'altra)" if doppi else ""))
     if limite:

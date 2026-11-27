@@ -93,7 +93,7 @@
   <fieldset class="motore">
     <legend>Chi descrive le foto</legend>
     <label><input type="radio" name="motore" value="locale" checked> Questo PC, con Ollama: gratis, serve una GPU (~4–7 s a foto)</label>
-    <div class="rientro ollama-riga">
+    <div class="rientro ollama-riga solo-locale">
       <label for="c-ollama">Ollama su:</label>
       <input id="c-ollama" type="text" spellcheck="false" placeholder="questo computer, oppure 192.168.1.20" aria-label="Indirizzo di Ollama">
       <button id="c-ollama-prova" type="button" title="Controlla che Ollama risponda, senza cambiare niente">Prova</button>
@@ -109,7 +109,7 @@
   <label><input id="c-lotti" type="checkbox"> A lotti: una sottocartella alla volta, con la ricerca aggiornata dopo ognuna (per archivi grandi)</label>
   <label><input id="c-prova" type="checkbox"> Prova: solo le prime 20 foto</label>
   <div class="dialogo-piede">
-    <button id="c-archivio" type="button" title="Cerca in questa cartella invece che nell'archivio attuale">Imposta come archivio</button>
+    <button id="c-archivio" class="solo-locale" type="button" title="Cerca in questa cartella invece che nell'archivio attuale">Imposta come archivio</button>
     <span class="spazio"></span>
     <button id="c-conta" type="button">Conta le foto</button>
     <button id="c-avvia" type="button" class="principale">Avvia la descrizione</button>

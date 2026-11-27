@@ -105,6 +105,7 @@ const TRADUZIONI = {
     "Ora la ricerca mostra l'archivio dimostrativo. Uso \"{p}\" come tuo archivio, così le schede nuove si possono cercare?": "The search is showing the demo archive. Use \"{p}\" as your archive, so the new records can be searched?",
     "\"{p}\" non fa parte dell'archivio della ricerca ({a}): le schede verrebbero scritte ma non le troveresti cercando.\nLa uso come archivio? (Annulla = descrivi soltanto)": "\"{p}\" is not part of the search archive ({a}): the records would be written but you would not find them when searching.\nUse it as the archive? (Cancel = just describe)",
     "Lingua": "Language", "Lingua dell'interfaccia e delle nuove schede": "Language of the interface and of new records",
+    "Dalla rete si descrivono solo cartelle dell'archivio.": "From the network you can only describe folders inside the archive.",
     "Le nuove schede saranno scritte in {l}. Per riscrivere quelle esistenti: «＋ Descrivi foto» › «Aggiorna».": "New records will be written in {l}. To rewrite existing ones: «＋ Describe photos» › «Update».",
   },
 };

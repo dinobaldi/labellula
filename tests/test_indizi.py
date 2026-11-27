@@ -1,3 +1,4 @@
+import importlib.util
 import unittest
 from datetime import date, datetime
 from pathlib import Path
@@ -56,6 +57,7 @@ class TestIndizi(unittest.TestCase):
         self.assertEqual(s.fotografia, "teleobiettivo")
 
 
+    @unittest.skipUnless(importlib.util.find_spec("reverse_geocoder"), "reverse_geocoder (facoltativo) non installato")
     def test_luoghi_dalle_cartelle(self):
         from labellula.indizi import cerca_luoghi
         nomi = lambda s: [r["name"] for r in cerca_luoghi(s)]
@@ -73,6 +75,13 @@ class TestIndizi(unittest.TestCase):
         ind = raccogli(R / "2021/2021-11-06 Casa Ravioli timelapse/DSCF1.JPG", R, None, None)
         self.assertEqual(luoghi_noti_citati(ind, {"Casa": "abitazione a Pavia", "Baldi srl": "azienda"}),
                          ['"Casa" = abitazione a Pavia'])
+
+
+class TestEsonimi(unittest.TestCase):
+    def test_munich_non_e_il_principato(self):
+        from labellula.indizi import ESONIMI
+        self.assertEqual(ESONIMI["munich"], "monaco di baviera")
+        self.assertNotIn("monaco", ESONIMI.values())
 
 
 if __name__ == "__main__":

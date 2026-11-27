@@ -48,12 +48,13 @@ DISTACCO_SIGNIFICATO = 0.10  # ...e non più lontano di così dal risultato migl
 CAMPI_RISULTATO = "id_foto, cartella, nome, anno, data, categoria, descrizione, persone_riconosciute, titolo"
 
 
-def trova_foto(radice: Path, estensioni, salta_cartelle):
+def trova_foto(radice: Path, estensioni, salta_cartelle, ricorsiva: bool = True):
+    """Le foto sotto `radice` (con `ricorsiva=False` solo quelle direttamente dentro)."""
     est = {e.lower() for e in estensioni}
     salta = {s.lower() for s in salta_cartelle}
     for dirpath, dirs, files in os.walk(radice):
         dirs[:] = sorted(d for d in dirs if d.lower() not in salta
-                         and not d.startswith("_") and not d.lower().startswith("txt_"))
+                         and not d.startswith(("_", ".")) and not d.lower().startswith("txt_")) if ricorsiva else []
         for f in sorted(files):
             if Path(f).suffix.lower() in est and not f.startswith("._"):
                 yield Path(dirpath) / f

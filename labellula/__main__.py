@@ -290,7 +290,7 @@ def main(argv=None) -> int:
     ap.add_argument("--configura", action="store_true", help="verifica: scrive motore e modello consigliato in config.yaml")
     ap.add_argument("--solo-ricerca", action="store_true", help="modelli: scarica solo il modello per la ricerca per significato")
     ap.add_argument("--forza", action="store_true", help="modelli: scarica il modello di descrizione anche se il PC non è adatto")
-    ap.add_argument("--prompt", choices=["v4", "v5"], help="descrivi: versione del prompt (default da config, poi v5)")
+    ap.add_argument("--prompt", choices=["v4", "v5"], help="descrivi: versione del prompt: v5 (scrive nelle schede «v5.2», è la predefinita) oppure v4")
     args = ap.parse_args(argv)
     percorso = Path(args.config)
     if not percorso.exists() and percorso.name == "config.yaml":

@@ -34,6 +34,8 @@ config.yaml
 
 # Eccezione: esempi pubblicabili (foto ridotte, senza EXIF, senza persone)
 !examples/foto/*.jpg
+# Schermate per il README
+!docs/schermate/*.jpg
 
 # Indice e miniature generati
 dati/

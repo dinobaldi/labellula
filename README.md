@@ -32,7 +32,7 @@ Labellula guarda ogni foto con un modello di intelligenza artificiale e scrive u
 
 Il nome viene da *label* (etichetta) e *libellula*. **Labellula è un progetto italiano**, ideato e sviluppato a Pavia da Dino Baldi per sostenere [ctrlalt.museum](https://ctrlalt.museum/), il museo dell'informatica dell'associazione culturale comPVter. Sito: **[labellula.it](https://labellula.it)** (in preparazione).
 
-<p align="center"><img src="docs/schermate/ricerca.jpg" alt="La ricerca di Labellula sulle foto di esempio" width="900"></p>
+<p align="center"><img src="docs/schermate/ricerca.jpg" alt="La ricerca di Labellula sull'archivio dimostrativo di ctrlalt.museum" width="900"></p>
 
 ## Perché Labellula
 

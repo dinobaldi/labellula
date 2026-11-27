@@ -27,6 +27,8 @@ API POST (corpo JSON, intestazione obbligatoria `X-Labellula: 1`):
 
 Protezioni: si accettano solo richieste con Host localhost/127.0.0.1 (contro il DNS rebinding) e le POST
 richiedono un'intestazione personalizzata, che un sito esterno non può inviare senza permesso CORS.
+Dalla rete di casa (con password) si cerca e si guarda; le impostazioni (archivio, Ollama, lingua, rete)
+si cambiano solo da questo computer, e cartelle e lavori sono limitati all'archivio.
 """
 from __future__ import annotations
 
@@ -66,9 +68,53 @@ def firma_codice() -> str:
 
 FIRMA_AVVIO = firma_codice()
 HOST_AMMESSI = {"localhost", "127.0.0.1", "[::1]"}
+# Dalla rete di casa queste POST non sono ammesse: cambiano dove vanno le foto (Ollama), cosa si legge
+# dal disco (archivio) o chi può entrare (rete). Si usano solo dal computer su cui gira Labellula.
+SOLO_DA_QUESTO_COMPUTER = {"/api/ollama", "/api/ollama/prova", "/api/archivio", "/api/lingua", "/api/rete"}
 CAMPI_CSV = ["id_foto", "cartella", "nome", "data", "anno", "categoria", "titolo", "descrizione", "testi",
              "luogo", "occasione", "persone_testo", "persone_riconosciute", "fotografia", "parole_chiave",
              "dubbi", "modello"]
+
+
+class LetturaScrittura:
+    """Molte richieste possono leggere l'indice insieme; la sostituzione aspetta che abbiano finito
+    (prima una ricerca poteva trovare il database già chiuso: «Cannot operate on a closed database»)."""
+
+    def __init__(self):
+        self._cond = threading.Condition()
+        self._lettori = 0
+        self._scrittore = False
+
+    def leggi(self):
+        lock = self
+
+        class _L:
+            def __enter__(self_):
+                with lock._cond:
+                    lock._cond.wait_for(lambda: not lock._scrittore)
+                    lock._lettori += 1
+
+            def __exit__(self_, *a):
+                with lock._cond:
+                    lock._lettori -= 1
+                    lock._cond.notify_all()
+        return _L()
+
+    def scrivi(self):
+        lock = self
+
+        class _S:
+            def __enter__(self_):
+                with lock._cond:
+                    lock._cond.wait_for(lambda: not lock._scrittore)
+                    lock._scrittore = True          # dalle nuove letture in poi si aspetta
+                    lock._cond.wait_for(lambda: lock._lettori == 0)
+
+            def __exit__(self_, *a):
+                with lock._cond:
+                    lock._scrittore = False
+                    lock._cond.notify_all()
+        return _S()
 
 
 class Applicazione:
@@ -85,7 +131,7 @@ class Applicazione:
         self.sessioni = Sessioni()
         self.ascolto = "127.0.0.1"          # indirizzo su cui il server è stato avviato (avvia())
         self.porta = 8765
-        self._lock_indice = threading.Lock()
+        self._lock_indice = LetturaScrittura()
         if cfg is not None:
             from .lavori import GestoreLavori
             self.lavori = GestoreLavori(cfg, al_termine=self.aggiorna_ricerca)
@@ -103,6 +149,13 @@ class Applicazione:
         if p.suffix.lower() not in self.estensioni or not p.is_file():
             return None
         return p
+
+    def nell_archivio(self, percorso: str | Path) -> bool:
+        try:
+            Path(percorso).resolve().relative_to(self.radice)
+            return True
+        except (ValueError, OSError):
+            return False
 
     def rete(self, da_questo_computer: bool) -> dict:
         from .accesso import indirizzi_locali
@@ -166,7 +219,7 @@ class Applicazione:
         costruisci(self.radice, nuovo, cartella_txt=cfg["schede"]["cartella_txt"],
                    estensioni=cfg["archivio"]["estensioni"], salta_cartelle=cfg["archivio"]["salta_cartelle"],
                    registro_file=registro, avanzamento=messaggio)
-        with self._lock_indice:
+        with self._lock_indice.scrivi():
             vecchio = self.indice
             vecchio.chiudi()                     # su Windows un file aperto non si può sostituire
             os.replace(nuovo, dati / "indice.sqlite3")
@@ -184,7 +237,7 @@ class Applicazione:
     def cambia_archivio(self, radice: str) -> dict:
         """Scrive la nuova radice in config.yaml (con copia .bak) e ricostruisce la ricerca."""
         p = Path(radice)
-        if not p.is_dir():
+        if not radice or not p.is_dir():
             raise FileNotFoundError(f"Cartella non trovata: {radice}")
         f = getattr(self.cfg, "file", None)
         if f and f.exists():
@@ -305,93 +358,113 @@ def crea_handler(app: Applicazione):
                 from .accesso import NOME_COOKIE
                 return self._html("", cookie=f"{NOME_COOKIE}=; Path=/; Max-Age=0; HttpOnly; SameSite=Strict", vai="/")
             try:
-                if u.path == "/api/info":
-                    info = app.indice.info()
-                    info["firma"] = FIRMA_AVVIO
-                    info["codice"] = str(Path(__file__).resolve().parent.parent)   # cartella di Labellula in uso
-                    rete = app.rete(not self._remoto())
-                    info["rete"] = rete
-                    info["riavvio_necessario"] = firma_codice() != FIRMA_AVVIO or rete["attiva"] != rete["configurata"]
-                    info["significato"] = app.semantico is not None
-                    info.update(app.info_pubblica())
-                    return self._json(info)
-                if u.path == "/api/filtri":
-                    return self._json(app.indice.valori_filtri())
-                if u.path == "/api/statistiche":
-                    return self._json(app.indice.statistiche())
-                if u.path == "/api/cerca":
-                    return self._json(app.indice.cerca(_filtri(q), pagina=int(q.get("pagina", 1)),
-                                                       semantico=app.semantico, modo=q.get("modo", "misto")))
-                if u.path == "/api/simili":
-                    if app.semantico is None:
-                        return self._json({"errore": "ricerca per significato non attiva"}, HTTPStatus.CONFLICT)
-                    r = app.indice.simili(q.get("id", ""), app.semantico)
-                    return self._json({"totale": len(r), "pagina": 1, "per_pagina": len(r), "modo": "simili",
-                                       "risultati": r})
-                if u.path == "/api/esporta.csv":
-                    righe = app.indice.tutte(_filtri(q), semantico=app.semantico, modo=q.get("modo", "misto"))
-                    buf = io.StringIO()
-                    w = csv.DictWriter(buf, fieldnames=CAMPI_CSV, extrasaction="ignore", delimiter=";")
-                    w.writeheader()
-                    w.writerows(righe)
-                    corpo = ("﻿" + buf.getvalue()).encode("utf-8")   # BOM: Excel riconosce l'UTF-8
-                    self.send_response(HTTPStatus.OK)
-                    self.send_header("Content-Type", "text/csv; charset=utf-8")
-                    self.send_header("Content-Disposition", 'attachment; filename="labellula_risultati.csv"')
-                    self.send_header("Content-Length", str(len(corpo)))
-                    self.end_headers()
-                    self.wfile.write(corpo)
-                    return
-                if u.path == "/api/scheda":
-                    s = app.indice.scheda(q.get("id", ""))
-                    return self._json(s) if s else self._json({"errore": "non trovata"}, HTTPStatus.NOT_FOUND)
-                if u.path == "/api/cartelle":
-                    from .lavori import elenca_cartelle
-                    return self._json(elenca_cartelle(q.get("percorso", ""), app.estensioni,
-                                                      app.cfg["schede"]["cartella_txt"] if app.cfg else "_txt"))
-                if u.path == "/api/conta":
-                    if not app.lavori:
-                        return self._json({"errore": "lavori non disponibili"}, HTTPStatus.CONFLICT)
-                    percorso = Path(q.get("percorso", ""))
-                    risposta = app.lavori.conta(percorso, q.get("rifai") == "1", q.get("aggiorna") == "1")
-                    try:
-                        percorso.resolve().relative_to(app.radice)
-                        risposta["in_archivio"] = True
-                    except (ValueError, OSError):
-                        risposta["in_archivio"] = False
-                    risposta["in_demo"] = app.info_pubblica().get("in_demo", False)
-                    return self._json(risposta)
-                if u.path == "/api/modelli":
-                    from .lavori import modelli_visione
-                    return self._json({"attuale": app.cfg["modello"]["nome"] if app.cfg else "",
-                                       "modelli": modelli_visione(app.cfg["modello"]["ollama_url"]) if app.cfg else []})
-                if u.path == "/api/lavoro":
-                    return self._json(app.lavori.stato() if app.lavori else {"attivo": False})
-                if u.path in ("/miniatura", "/foto"):
-                    p = app.percorso_foto(q.get("id", ""))
-                    if p is None:
-                        return self._json({"errore": "foto non trovata"}, HTTPStatus.NOT_FOUND)
-                    if u.path == "/foto":
-                        if p.suffix.lower() in (".heic", ".heif"):     # i browser (tranne Safari) non mostrano l'HEIC
-                            return self._file(miniatura(p, app.cache, q["id"], 3000), "image/jpeg", cache_sec=86400)
-                        return self._file(p)
-                    lato = 1600 if q.get("lato") == "1600" else 480  # (3000 solo per le HEIC "originali")
-                    return self._file(miniatura(p, app.cache, q["id"], lato), "image/jpeg", cache_sec=86400)
-                # file statici dell'interfaccia
-                nome = "index.html" if u.path in ("", "/") else u.path.lstrip("/")
-                f = (WEB / nome).resolve()
-                if f.parent == WEB.resolve() and f.is_file():
-                    return self._file(f)
-                return self._json({"errore": "non trovato"}, HTTPStatus.NOT_FOUND)
+                with app._lock_indice.leggi():
+                    return self._get(u, q)
             except (BrokenPipeError, ConnectionResetError):
                 pass
             except FileNotFoundError as ex:
                 self._json({"errore": str(ex)}, HTTPStatus.NOT_FOUND)
             except Exception as ex:  # errore leggibile invece di una pagina vuota
                 try:
-                    self._json({"errore": str(ex)}, HTTPStatus.INTERNAL_SERVER_ERROR)
+                    self._json({"errore": self._messaggio(ex)}, HTTPStatus.INTERNAL_SERVER_ERROR)
                 except Exception:
                     pass
+
+        def _messaggio(self, ex: Exception) -> str:
+            """Dalla rete niente dettagli interni (percorsi, moduli): solo il tipo di errore."""
+            return str(ex) if not self._remoto() else f"errore interno ({type(ex).__name__})"
+
+        def _get(self, u, q):
+            if u.path == "/api/info":
+                info = app.indice.info()
+                info["firma"] = FIRMA_AVVIO
+                info["codice"] = str(Path(__file__).resolve().parent.parent)   # cartella di Labellula in uso
+                rete = app.rete(not self._remoto())
+                info["rete"] = rete
+                info["riavvio_necessario"] = firma_codice() != FIRMA_AVVIO or rete["attiva"] != rete["configurata"]
+                info["significato"] = app.semantico is not None
+                info.update(app.info_pubblica())
+                return self._json(info)
+            if u.path == "/api/filtri":
+                return self._json(app.indice.valori_filtri())
+            if u.path == "/api/statistiche":
+                return self._json(app.indice.statistiche())
+            if u.path == "/api/cerca":
+                return self._json(app.indice.cerca(_filtri(q), pagina=int(q.get("pagina", 1)),
+                                                   semantico=app.semantico, modo=q.get("modo", "misto")))
+            if u.path == "/api/simili":
+                if app.semantico is None:
+                    return self._json({"errore": "ricerca per significato non attiva"}, HTTPStatus.CONFLICT)
+                r = app.indice.simili(q.get("id", ""), app.semantico)
+                return self._json({"totale": len(r), "pagina": 1, "per_pagina": len(r), "modo": "simili",
+                                   "risultati": r})
+            if u.path == "/api/esporta.csv":
+                righe = app.indice.tutte(_filtri(q), semantico=app.semantico, modo=q.get("modo", "misto"))
+                buf = io.StringIO()
+                w = csv.DictWriter(buf, fieldnames=CAMPI_CSV, extrasaction="ignore", delimiter=";")
+                w.writeheader()
+                w.writerows(righe)
+                corpo = ("﻿" + buf.getvalue()).encode("utf-8")   # BOM: Excel riconosce l'UTF-8
+                self.send_response(HTTPStatus.OK)
+                self.send_header("Content-Type", "text/csv; charset=utf-8")
+                self.send_header("Content-Disposition", 'attachment; filename="labellula_risultati.csv"')
+                self.send_header("Content-Length", str(len(corpo)))
+                self.end_headers()
+                self.wfile.write(corpo)
+                return
+            if u.path == "/api/scheda":
+                s = app.indice.scheda(q.get("id", ""))
+                return self._json(s) if s else self._json({"errore": "non trovata"}, HTTPStatus.NOT_FOUND)
+            if u.path == "/api/cartelle":
+                from .lavori import elenca_cartelle
+                percorso = q.get("percorso", "")
+                if self._remoto():          # dalla rete si sfoglia solo l'archivio, non tutto il disco
+                    percorso = percorso or str(app.radice)
+                    if not app.nell_archivio(percorso):
+                        return self._json({"errore": "dalla rete si vedono solo le cartelle dell'archivio"},
+                                          HTTPStatus.FORBIDDEN)
+                r = elenca_cartelle(percorso, app.estensioni,
+                                    app.cfg["schede"]["cartella_txt"] if app.cfg else "_txt")
+                if self._remoto() and Path(r["percorso"]).resolve() == app.radice:
+                    r["padre"] = None
+                return self._json(r)
+            if u.path == "/api/conta":
+                if not app.lavori:
+                    return self._json({"errore": "lavori non disponibili"}, HTTPStatus.CONFLICT)
+                if self._remoto() and not app.nell_archivio(q.get("percorso", "")):
+                    return self._json({"errore": "dalla rete si lavora solo dentro l'archivio"},
+                                      HTTPStatus.FORBIDDEN)
+                percorso = Path(q.get("percorso", ""))
+                risposta = app.lavori.conta(percorso, q.get("rifai") == "1", q.get("aggiorna") == "1")
+                try:
+                    percorso.resolve().relative_to(app.radice)
+                    risposta["in_archivio"] = True
+                except (ValueError, OSError):
+                    risposta["in_archivio"] = False
+                risposta["in_demo"] = app.info_pubblica().get("in_demo", False)
+                return self._json(risposta)
+            if u.path == "/api/modelli":
+                from .lavori import modelli_visione
+                return self._json({"attuale": app.cfg["modello"]["nome"] if app.cfg else "",
+                                   "modelli": modelli_visione(app.cfg["modello"]["ollama_url"]) if app.cfg else []})
+            if u.path == "/api/lavoro":
+                return self._json(app.lavori.stato() if app.lavori else {"attivo": False})
+            if u.path in ("/miniatura", "/foto"):
+                p = app.percorso_foto(q.get("id", ""))
+                if p is None:
+                    return self._json({"errore": "foto non trovata"}, HTTPStatus.NOT_FOUND)
+                if u.path == "/foto":
+                    if p.suffix.lower() in (".heic", ".heif"):     # i browser (tranne Safari) non mostrano l'HEIC
+                        return self._file(miniatura(p, app.cache, q["id"], 3000), "image/jpeg", cache_sec=86400)
+                    return self._file(p)
+                lato = 1600 if q.get("lato") == "1600" else 480  # (3000 solo per le HEIC "originali")
+                return self._file(miniatura(p, app.cache, q["id"], lato), "image/jpeg", cache_sec=86400)
+            # file statici dell'interfaccia
+            nome = "index.html" if u.path in ("", "/") else u.path.lstrip("/")
+            f = (WEB / nome).resolve()
+            if f.parent == WEB.resolve() and f.is_file():
+                return self._file(f)
+            return self._json({"errore": "non trovato"}, HTTPStatus.NOT_FOUND)
 
         def do_POST(self):
             if not self._host_ok():
@@ -409,7 +482,12 @@ def crea_handler(app: Applicazione):
                 n = int(self.headers.get("Content-Length") or 0)
                 corpo = json.loads(self.rfile.read(n) or b"{}") if n else {}
                 u = urlparse(self.path)
+                if self._remoto() and u.path in SOLO_DA_QUESTO_COMPUTER:
+                    return self._json({"errore": "si imposta solo dal computer con Labellula"}, HTTPStatus.FORBIDDEN)
                 if u.path == "/api/lavoro":
+                    if self._remoto() and not app.nell_archivio(str(corpo.get("cartella", ""))):
+                        return self._json({"errore": "dalla rete si descrivono solo cartelle dell'archivio"},
+                                          HTTPStatus.FORBIDDEN)
                     return self._json(app.lavori.avvia(str(corpo.get("cartella", "")), bool(corpo.get("rifai")),
                                                        int(corpo.get("limite") or 0), bool(corpo.get("aggiorna")),
                                                        str(corpo.get("modello") or ""), bool(corpo.get("a_lotti"))))
@@ -430,8 +508,6 @@ def crea_handler(app: Applicazione):
                 if u.path == "/api/lingua":
                     from .config import imposta_valore
                     from .descrizione import LINGUE
-                    if self._remoto():
-                        return self._json({"errore": "si imposta solo dal computer con Labellula"}, HTTPStatus.FORBIDDEN)
                     lingua = str(corpo.get("lingua", ""))
                     if lingua not in LINGUE:
                         return self._json({"errore": "lingua non disponibile"}, HTTPStatus.CONFLICT)
@@ -441,8 +517,6 @@ def crea_handler(app: Applicazione):
                             imposta_valore(app.cfg.file, sezione, "lingua", lingua)
                     return self._json({"ok": True, "lingua": lingua})
                 if u.path == "/api/rete":
-                    if self._remoto():
-                        return self._json({"errore": "si imposta solo dal computer con Labellula"}, HTTPStatus.FORBIDDEN)
                     return self._json(self._imposta_rete(corpo))
                 if u.path == "/api/archivio":
                     if app.lavori.stato().get("attivo"):
@@ -453,7 +527,7 @@ def crea_handler(app: Applicazione):
             except (FileNotFoundError, RuntimeError, ValueError) as ex:
                 return self._json({"errore": str(ex)}, HTTPStatus.CONFLICT)
             except Exception as ex:
-                return self._json({"errore": str(ex)}, HTTPStatus.INTERNAL_SERVER_ERROR)
+                return self._json({"errore": self._messaggio(ex)}, HTTPStatus.INTERNAL_SERVER_ERROR)
 
         def _accesso(self):
             from urllib.parse import parse_qs as pq

@@ -45,14 +45,14 @@ PAESI = {"IT": "Italia", "CH": "Svizzera", "FR": "Francia", "DE": "Germania", "N
          "NO": "Norvegia", "FI": "Finlandia", "MT": "Malta", "TR": "Turchia", "EG": "Egitto", "TN": "Tunisia"}
 ESONIMI = {"geneva": "ginevra", "turin": "torino", "milan": "milano", "florence": "firenze", "venice": "venezia",
            "rome": "roma", "naples": "napoli", "genoa": "genova", "padua": "padova", "mantua": "mantova",
-           "lucerne": "lucerna", "zurich": "zurigo", "basel": "basilea", "bern": "berna", "munich": "monaco",
+           "lucerne": "lucerna", "zurich": "zurigo", "basel": "basilea", "bern": "berna", "munich": "monaco di baviera",
            "cologne": "colonia", "paris": "parigi", "nice": "nizza", "marseille": "marsiglia", "lyon": "lione",
            "brussels": "bruxelles", "london": "londra", "warsaw": "varsavia", "prague": "praga", "vienna": "vienna",
            "lisbon": "lisbona", "athens": "atene", "seville": "siviglia", "barcelona": "barcellona",
            "piedmont": "piemonte", "lombardy": "lombardia", "tuscany": "toscana", "liguria": "liguria",
            "sicily": "sicilia", "sardinia": "sardegna", "ticino": "ticino", "aosta": "aosta",
            "geneve": "ginevra", "luzern": "lucerna", "antwerpen": "anversa", "gent": "gand",
-           "strasbourg": "strasburgo", "brugge": "bruges", "prague": "praga", "warsaw": "varsavia"}
+           "strasbourg": "strasburgo", "brugge": "bruges", "munchen": "monaco di baviera"}
 # Nomi propri comuni che esistono anche come località (Anna in Spagna, Marco in Francia...): da soli non sono luoghi
 NOMI_PROPRI = set("""
 alessandro alessandra alberto alice andrea angela anna antonio arianna aurora beatrice benedetta bruno camilla carla
@@ -211,7 +211,7 @@ def _verifica_luogo(ind: Indizi, gps: dict | None, trovati=()) -> str:
         if _km(x, gps) <= MAX_KM_CONFERMA:
             return f"confermato dal GPS, a {_km(x, gps):.0f} km"
     luoghi = _parole(" ".join(str(gps.get(k, "")) for k in ("name", "admin1", "admin2")))
-    luoghi |= {ESONIMI[w] for w in luoghi if w in ESONIMI}
+    luoghi |= {p for w in list(luoghi) if w in ESONIMI for p in _parole(ESONIMI[w])}
     paese = _parole(PAESI.get(gps.get("cc", ""), ""))
     cartella = _parole(" ".join(ind.cartelle))
     nome = ESONIMI.get(_norm(str(gps.get("name", ""))), "").capitalize() or gps.get("name")

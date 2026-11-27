@@ -30,6 +30,14 @@ class TestIds(unittest.TestCase):
         with self.assertRaises(ValueError):
             id_foto(RADICE, str(BASE / "altro" / "foto.jpg"))
 
+    def test_radice_che_e_prefisso_di_un_altra_cartella(self):
+        """«Archivio» non contiene «Archivio2»: dopo la radice ci vuole un separatore."""
+        with self.assertRaises(ValueError):
+            id_foto(RADICE, str(BASE / "Archivio2" / "foto.jpg"))
+        with self.assertRaises(ValueError):            # percorsi Windows letti su Linux/macOS
+            id_foto("H:\\Foto", "H:\\Fotografie\\2022\\x.jpg")
+        self.assertEqual(id_foto("H:\\Foto", "H:\\Foto\\2022\\x.jpg"), "2022/x.jpg")
+
     def test_scomponi(self):
         vid = id_volto(RADICE, A, 3)
         self.assertEqual(scomponi_id_volto(vid), ("2022/2022-03-19 gara ciclistica/DSCF1727.JPG", 3))

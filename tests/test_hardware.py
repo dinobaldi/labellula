@@ -53,7 +53,7 @@ class TestAvviaOllama(unittest.TestCase):
 
 class TestHardware(unittest.TestCase):
     def test_mac_intel_con_radeon_non_adatto(self):
-        """Il MacBook Pro 2019 di Dino: i9 + Radeon Pro 5300M 4 GB -> elaborazione remota, niente download."""
+        """Un MacBook Pro 2019: i9 + Radeon Pro 5300M 4 GB -> elaborazione remota, niente download."""
         # il test può girare su un Mac con chip Apple (GitHub Actions): si simula un Mac Intel
         with mock.patch.object(H.platform, "machine", return_value="x86_64"):
             schede = H.schede_mac(finto(MAC_INTEL))

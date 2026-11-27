@@ -31,7 +31,8 @@ def id_foto(radice: str | Path, foto: str | Path) -> str:
     except ValueError:
         # confronto senza distinzione maiuscole/minuscole (Windows)
         r, f = str(radice_p).rstrip("\\/").lower(), str(foto_p)
-        if not f.lower().startswith(r):
+        # dopo la radice deve venire un separatore: "C:/Foto" non contiene "C:/Fotografie/..."
+        if not f.lower().startswith(r) or f[len(r):len(r) + 1] not in ("\\", "/"):
             raise ValueError(f"La foto {foto_p} non sta sotto la radice {radice_p}")
         # Percorsi scritti su Windows (es. registri legacy "H:\...") letti su Linux o macOS:
         # lì "\" non è un separatore, quindi va convertito a mano.

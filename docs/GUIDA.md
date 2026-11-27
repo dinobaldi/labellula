@@ -300,7 +300,7 @@ Le schede già scritte restano valide: le versioni nuove del prompt si applicano
 - **Telefono e tablet**: dalla pagina, **? › Telefono e tablet**, scegli una password e premi *Attiva*; poi chiudi e riapri Labellula. Dal telefono, sulla stessa Wi-Fi, apri l'indirizzo che compare (per esempio `http://192.168.1.20:8765`) e inserisci la password. In alternativa: `python -m labellula rete attiva`.
   - Da questo computer la password non serve; dagli altri dispositivi sì, e senza password l'accesso resta chiuso.
   - La password è salvata solo come impronta (PBKDF2); dopo 5 tentativi sbagliati si aspetta sempre di più.
-  - Le impostazioni di rete si cambiano solo dal computer con Labellula, non dal telefono.
+  - Dal telefono si cerca, si guardano le foto e si possono descrivere le cartelle dell'archivio. Le impostazioni (archivio, Ollama, lingua, rete) si cambiano solo dal computer con Labellula, e il resto del disco non è visibile.
   - Il collegamento nella rete di casa non è cifrato (http): non usarlo su reti pubbliche e non aprire la porta 8765 verso internet.
   - La prima volta il firewall di Windows o macOS chiede il permesso: consentilo sulle reti **private**.
 - `config.yaml`, gli indici (`dati/`), le schede e i registri dei volti sono esclusi da Git.
